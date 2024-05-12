@@ -17,11 +17,13 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6 7"
+color="4 5 6 7 8 9"
 node="gain_00
 gain_01
 gain_02
-gain_03"
+gain_03
+gain_04
+gain_05"
 sweep=frequency
 
 
@@ -70,29 +72,25 @@ rainbow=0
 
 y1=-8
 x2=11
-color="4 5 6 7"
+color="4 5 6 7 8 9"
 node="ratio_00
 ratio_01
 ratio_02
-ratio_03"
+ratio_03
+ratio_04
+ratio_05"
 y2=2}
 N -640 150 -640 180 {
 lab=GND}
 N -640 60 -640 90 {
 lab=agnd}
-N -540 150 -540 180 {
+N -440 150 -440 180 {
 lab=agnd}
-N -540 60 -540 90 {
+N -440 60 -440 90 {
 lab=stim}
 N -220 -180 -220 -160 {
 lab=stim}
 N -220 -40 -220 -20 {
-lab=agnd}
-N -300 -130 -240 -130 {
-lab=agnd}
-N -300 -130 -300 -40 {
-lab=agnd}
-N -300 -40 -220 -40 {
 lab=agnd}
 N -220 -100 -80 -100 {
 lab=out_01}
@@ -106,12 +104,6 @@ N 20 -180 20 -160 {
 lab=stim}
 N 20 -40 20 -20 {
 lab=agnd}
-N -60 -130 0 -130 {
-lab=agnd}
-N -60 -130 -60 -40 {
-lab=agnd}
-N -60 -40 20 -40 {
-lab=agnd}
 N 20 -100 160 -100 {
 lab=out_03}
 N 20 -380 20 -360 {
@@ -120,6 +112,22 @@ N 20 -240 20 -220 {
 lab=agnd}
 N 20 -300 160 -300 {
 lab=out_02}
+N -540 60 -540 90 {
+lab=avdd}
+N -540 150 -540 180 {
+lab=agnd}
+N 260 -380 260 -360 {
+lab=avdd}
+N 260 -240 260 -220 {
+lab=stim}
+N 260 -300 400 -300 {
+lab=out_04}
+N 260 -180 260 -160 {
+lab=avdd}
+N 260 -40 260 -20 {
+lab=stim}
+N 260 -100 400 -100 {
+lab=out_05}
 C {devices/vsource.sym} -640 120 0 0 {name=Vsrc_agnd value=0 savecurrent=false}
 C {devices/gnd.sym} -640 180 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -640 60 0 0 {name=p1 sig_type=std_logic lab=agnd}
@@ -148,19 +156,23 @@ let ratio_00 = v(out_00)/v(stim)
 let ratio_01 = v(out_01)/v(stim)
 let ratio_02 = v(out_02)/v(stim)
 let ratio_03 = v(out_03)/v(stim)
+let ratio_04 = v(out_04)/v(stim)
+let ratio_05 = v(out_05)/v(stim)
 
 let gain_00 = db(ratio_00)
 let gain_01 = db(ratio_01)
 let gain_02 = db(ratio_02)
 let gain_03 = db(ratio_03)
+let gain_04 = db(ratio_04)
+let gain_05 = db(ratio_05)
 
 write TB_Filters.raw
 
 .endc
 " }
-C {devices/vsource.sym} -540 120 0 0 {name=Vsrc_stim value="1.8 AC 1" savecurrent=false}
-C {devices/lab_wire.sym} -540 180 0 0 {name=p4 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -540 60 0 0 {name=p10 sig_type=std_logic lab=stim}
+C {devices/vsource.sym} -440 120 0 0 {name=Vsrc_stim value="1.8 AC 1" savecurrent=false}
+C {devices/lab_wire.sym} -440 180 0 0 {name=p4 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -440 60 0 0 {name=p10 sig_type=std_logic lab=stim}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -220 -70 0 0 {name=C1 model=cap_mim_m3_1 W=6.2 L=6 MF=1 spiceprefix=X}
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} -220 -130 0 0 {name=R1
 L=0.7
@@ -205,3 +217,31 @@ L=0.5
 model=res_high_po_0p35
 spiceprefix=X
 mult=3}
+C {devices/vsource.sym} -540 120 0 0 {name=Vsrc_avdd value=1.8 savecurrent=false}
+C {devices/lab_wire.sym} -540 180 0 0 {name=p2 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -540 60 0 0 {name=p3 sig_type=std_logic lab=avdd}
+C {devices/res.sym} 260 -330 0 0 {name=R4
+value=1692
+footprint=1206
+device=resistor
+m=1}
+C {devices/capa.sym} 260 -270 0 0 {name=C4
+m=1
+value=9.403e-13
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_wire.sym} 260 -20 0 0 {name=p18 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} 400 -300 0 0 {name=p20 sig_type=std_logic lab=out_04}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 260 -70 0 0 {name=C5 model=cap_mim_m3_1 W=21 L=22 MF=1 spiceprefix=X}
+C {devices/lab_wire.sym} 260 -220 0 0 {name=p21 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} 400 -100 0 0 {name=p23 sig_type=std_logic lab=out_05}
+C {sky130_fd_pr/res_high_po_0p35.sym} 260 -130 0 0 {name=R5
+L=1
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {devices/lab_wire.sym} 260 -180 0 0 {name=p19 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} 260 -380 0 0 {name=p22 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} 240 -130 0 0 {name=p24 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -240 -130 0 0 {name=p25 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} 0 -130 0 0 {name=p26 sig_type=std_logic lab=agnd}
