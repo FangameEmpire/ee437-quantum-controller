@@ -18,8 +18,8 @@ C {devices/ipin.sym} -160 170 0 0 {name=p5 lab=vin}
 C {devices/opin.sym} -80 120 0 0 {name=p6 lab=vout}
 C {devices/iopin.sym} -120 220 0 0 {name=p4 lab=agnd}
 C {sky130_fd_pr/nfet_01v8.sym} -140 170 0 0 {name=M1
-L=0.3
-W=4
+L=0.15
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

@@ -97,48 +97,38 @@ N -80 60 -80 80 {
 lab=agnd}
 N -140 0 -80 0 {
 lab=amp_out_01}
-N -360 0 -320 0 {
+N -360 -220 -320 -220 {
 lab=#net1}
 N -80 280 -80 300 {
 lab=agnd}
 N -140 220 -80 220 {
 lab=amp_out_02}
-N -360 220 -320 220 {
+N -360 0 -320 0 {
 lab=#net2}
-N -580 0 -560 0 {
+N -580 -220 -560 -220 {
 lab=#net3}
-N -520 220 -500 220 {
+N -520 0 -500 0 {
 lab=#net4}
+N -360 220 -320 220 {
+lab=#net5}
 N -80 500 -80 520 {
 lab=agnd}
 N -140 440 -80 440 {
 lab=amp_out_03}
 N -360 440 -320 440 {
-lab=#net5}
-N -80 720 -80 740 {
-lab=agnd}
-N -140 660 -80 660 {
-lab=amp_out_04}
-N -360 660 -320 660 {
 lab=#net6}
-N -80 940 -80 960 {
-lab=agnd}
-N -140 880 -80 880 {
-lab=amp_out_05}
-N -80 1160 -80 1180 {
-lab=agnd}
-N -140 1100 -80 1100 {
-lab=amp_out_06}
-N -360 1100 -320 1100 {
-lab=#net7}
 N 0 -480 0 -450 {
 lab=vcm}
 N 0 -390 0 -360 {
 lab=agnd}
+N -840 -160 -840 -140 {
+lab=agnd}
+N -900 -220 -840 -220 {
+lab=amp_out_04}
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -260 -220 0 0 {name=x1}
 C {devices/vsource.sym} -360 -420 0 0 {name=Vsrc_agnd value=0 savecurrent=false}
 C {devices/vsource.sym} -270 -420 0 0 {name=Vsrc_avdd value=1.8 savecurrent=false}
-C {devices/vsource.sym} -90 -420 0 0 {name=Vsrc_stim value="1.2 AC 1" savecurrent=false}
+C {devices/vsource.sym} -90 -420 0 0 {name=Vsrc_stim value="0.01 AC 1" savecurrent=false}
 C {devices/gnd.sym} -360 -360 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -360 -480 0 0 {name=p1 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -270 -360 0 0 {name=p2 sig_type=std_logic lab=agnd}
@@ -165,7 +155,7 @@ echo
 
 * Print stats for each MOSFET
 * xm1 xm2 xm3 xm4
-foreach amp x1 x3 x5 x9 x2
+foreach amp x1 x3 x5 x2
  foreach mos xm1
   * Save stats
   save @m.\{$amp\}.\{$mos\}.msky130_fd_pr__nfet_01v8[gm]
@@ -187,7 +177,7 @@ foreach amp x1 x3 x5 x9 x2
  end
 end
 
-foreach amp x12 x13
+foreach amp x13
  foreach mos xm1 xm2
   * Save stats
   save @m.\{$amp\}.\{$mos\}.msky130_fd_pr__nfet_01v8[gm]
@@ -211,7 +201,7 @@ end
 
 * Print region of operation
 echo Regions of Operation:
-foreach amp x1 x3 x5 x9 x2
+foreach amp x1 x3 x5 x2
  foreach nmos xm1
   * Save stats
   let vds = @m.\{$amp\}.\{$nmos\}.msky130_fd_pr__nfet_01v8[vds]
@@ -236,7 +226,7 @@ foreach amp x1 x3 x5 x9 x2
  end
 end
 
-foreach amp x12 x13
+foreach amp x13
  foreach nmos xm1 xm2
   * Save stats
   let vds = @m.\{$amp\}.\{$nmos\}.msky130_fd_pr__nfet_01v8[vds]
@@ -276,16 +266,16 @@ let ratio_01 = v(amp_out_01)/v(stim)
 let ratio_02 = v(amp_out_02)/v(stim)
 let ratio_03 = v(amp_out_03)/v(stim)
 let ratio_04 = v(amp_out_04)/v(stim)
-let ratio_05 = v(amp_out_05)/v(stim)
-let ratio_06 = v(amp_out_06)/v(stim)
+*let ratio_05 = v(amp_out_05)/v(stim)
+*let ratio_06 = v(amp_out_06)/v(stim)
 
 let gain_00 = db(mag(ratio_00))
 let gain_01 = db(mag(ratio_01))
 let gain_02 = db(mag(ratio_02))
 let gain_03 = db(mag(ratio_03))
 let gain_04 = db(mag(ratio_04))
-let gain_05 = db(mag(ratio_05))
-let gain_06 = db(mag(ratio_06))
+*let gain_05 = db(mag(ratio_05))
+*let gain_06 = db(mag(ratio_06))
 
 write TB_Final_Amp.raw
 
@@ -313,7 +303,6 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -80 -140 0 1 {name=p9 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -320 -220 0 0 {name=Vsrc_stim3 sig_type=std_logic lab=stim}
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -260 0 0 0 {name=x3}
 C {devices/lab_wire.sym} -80 0 0 0 {name=Vsrc_stim5 sig_type=std_logic lab=amp_out_01}
 C {devices/lab_wire.sym} -280 90 0 1 {name=p10 sig_type=std_logic lab=agnd}
@@ -324,9 +313,9 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -80 80 0 1 {name=p12 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/LPF.sym} -580 -40 0 0 {name=x4}
-C {devices/lab_wire.sym} -720 0 0 0 {name=Vsrc_stim6 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -400 80 0 1 {name=p13 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/LPF.sym} -580 -260 0 0 {name=x4}
+C {devices/lab_wire.sym} -720 -220 0 0 {name=Vsrc_stim6 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -400 -140 0 1 {name=p13 sig_type=std_logic lab=agnd}
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -260 220 0 0 {name=x5}
 C {devices/lab_wire.sym} -80 220 0 0 {name=Vsrc_stim7 sig_type=std_logic lab=amp_out_02}
 C {devices/lab_wire.sym} -280 310 0 1 {name=p14 sig_type=std_logic lab=agnd}
@@ -337,67 +326,44 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -80 300 0 1 {name=p16 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/LPF.sym} -740 180 0 0 {name=x6}
-C {devices/lab_wire.sym} -720 220 0 0 {name=Vsrc_stim8 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -560 300 0 1 {name=p17 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -580 20 0 0 {name=x7}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 240 0 0 {name=x8}
-C {devices/lab_wire.sym} -460 300 0 1 {name=p18 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -680 80 0 1 {name=p19 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -260 440 0 0 {name=x9}
-C {devices/lab_wire.sym} -80 440 0 0 {name=Vsrc_stim9 sig_type=std_logic lab=amp_out_03}
-C {devices/lab_wire.sym} -280 530 0 1 {name=p22 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -280 350 0 1 {name=p23 sig_type=std_logic lab=avdd}
-C {devices/capa.sym} -80 470 0 0 {name=C_Load3
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/LPF.sym} -740 -40 0 0 {name=x6}
+C {devices/lab_wire.sym} -720 0 0 0 {name=Vsrc_stim8 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -560 80 0 1 {name=p17 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -580 -200 0 0 {name=x7}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 20 0 0 {name=x8}
+C {devices/lab_wire.sym} -460 80 0 1 {name=p18 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -680 -140 0 1 {name=p19 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 240 0 0 {name=x11}
+C {devices/lab_wire.sym} -460 300 0 1 {name=p28 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -500 220 0 0 {name=Vsrc_stim12 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -80 440 0 0 {name=Vsrc_stim15 sig_type=std_logic lab=amp_out_03}
+C {devices/lab_wire.sym} -280 530 0 1 {name=p33 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -280 350 0 1 {name=p34 sig_type=std_logic lab=avdd}
+C {devices/capa.sym} -80 470 0 0 {name=C_Load6
 m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 520 0 1 {name=p24 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/LPF.sym} -580 400 0 0 {name=x10}
-C {devices/lab_wire.sym} -560 440 0 0 {name=Vsrc_stim10 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -400 520 0 1 {name=p25 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -260 660 0 0 {name=x2}
-C {devices/lab_wire.sym} -80 660 0 0 {name=Vsrc_stim11 sig_type=std_logic lab=amp_out_04}
-C {devices/lab_wire.sym} -280 750 0 1 {name=p8 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -280 570 0 1 {name=p26 sig_type=std_logic lab=avdd}
-C {devices/capa.sym} -80 690 0 0 {name=C_Load4
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 740 0 1 {name=p27 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 680 0 0 {name=x11}
-C {devices/lab_wire.sym} -460 740 0 1 {name=p28 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -500 660 0 0 {name=Vsrc_stim12 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -80 880 0 0 {name=Vsrc_stim13 sig_type=std_logic lab=amp_out_05}
-C {devices/lab_wire.sym} -280 970 0 1 {name=p30 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -280 790 0 1 {name=p31 sig_type=std_logic lab=avdd}
-C {devices/capa.sym} -80 910 0 0 {name=C_Load5
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 960 0 1 {name=p32 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -320 880 0 0 {name=Vsrc_stim14 sig_type=std_logic lab=stim}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp_Diode.sym} -300 900 0 0 {name=x12}
-C {devices/lab_wire.sym} -80 1100 0 0 {name=Vsrc_stim15 sig_type=std_logic lab=amp_out_06}
-C {devices/lab_wire.sym} -280 1190 0 1 {name=p33 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -280 1010 0 1 {name=p34 sig_type=std_logic lab=avdd}
-C {devices/capa.sym} -80 1130 0 0 {name=C_Load6
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 1180 0 1 {name=p35 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 1120 0 0 {name=x14}
-C {devices/lab_wire.sym} -460 1180 0 1 {name=p36 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -500 1100 0 0 {name=Vsrc_stim16 sig_type=std_logic lab=stim}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp_Diode.sym} -300 1120 0 0 {name=x13}
+C {devices/lab_wire.sym} -80 520 0 1 {name=p35 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -360 460 0 0 {name=x14}
+C {devices/lab_wire.sym} -460 520 0 1 {name=p36 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -500 440 0 0 {name=Vsrc_stim16 sig_type=std_logic lab=stim}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp_Diode.sym} -300 460 0 0 {name=x13}
 C {devices/vsource.sym} 0 -420 0 0 {name=Vsrc_vcm value=1.2 savecurrent=false}
 C {devices/lab_wire.sym} 0 -360 0 0 {name=p38 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} 0 -480 0 0 {name=p39 sig_type=std_logic lab=vcm}
-C {devices/lab_wire.sym} -660 -100 0 0 {name=p21 sig_type=std_logic lab=vcm}
-C {devices/lab_wire.sym} -440 120 0 0 {name=p20 sig_type=std_logic lab=vcm}
-C {devices/lab_wire.sym} -440 560 0 0 {name=p29 sig_type=std_logic lab=vcm}
-C {devices/lab_wire.sym} -440 1000 0 0 {name=p37 sig_type=std_logic lab=vcm}
+C {devices/lab_wire.sym} -660 -320 0 0 {name=p21 sig_type=std_logic lab=vcm}
+C {devices/lab_wire.sym} -440 -100 0 0 {name=p20 sig_type=std_logic lab=vcm}
+C {devices/lab_wire.sym} -440 120 0 0 {name=p29 sig_type=std_logic lab=vcm}
+C {devices/lab_wire.sym} -440 340 0 0 {name=p37 sig_type=std_logic lab=vcm}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -1020 -220 0 0 {name=x2}
+C {devices/lab_wire.sym} -840 -220 0 0 {name=Vsrc_stim3 sig_type=std_logic lab=amp_out_04}
+C {devices/lab_wire.sym} -1040 -130 0 1 {name=p8 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1040 -310 0 1 {name=p22 sig_type=std_logic lab=avdd}
+C {devices/capa.sym} -840 -190 0 0 {name=C_Load3
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_wire.sym} -840 -140 0 1 {name=p23 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1080 -220 0 0 {name=Vsrc_stim9 sig_type=std_logic lab=stim}

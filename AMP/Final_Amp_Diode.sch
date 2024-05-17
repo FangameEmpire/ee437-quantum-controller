@@ -38,8 +38,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 40 -30 0 0 {name=M2
-L=0.3
-W=8
+L=2.5
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

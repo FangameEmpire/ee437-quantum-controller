@@ -8,10 +8,10 @@ E {}
 N 80 -180 80 -160 {
 lab=avdd}
 N 80 -40 80 -20 {
-lab=#net1}
+lab=vin}
 N 80 -100 160 -100 {
 lab=vout}
-C {sky130_fd_pr/cap_mim_m3_1.sym} 80 -70 0 0 {name=C5 model=cap_mim_m3_1 W=21 L=22 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 80 -70 0 0 {name=C5 model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
 C {sky130_fd_pr/res_high_po_0p35.sym} 80 -130 0 0 {name=R5
 L=1
 model=res_high_po_0p35

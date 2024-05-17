@@ -160,23 +160,43 @@ N -940 500 -940 520 {
 lab=avdd}
 N -940 580 -940 620 {
 lab=amp_out_05}
-N -940 740 -940 760 {
-lab=agnd}
-N -940 710 -940 740 {
-lab=agnd}
 N -940 650 -930 650 {
-lab=agnd}
-N -930 650 -930 710 {
-lab=agnd}
-N -940 710 -930 710 {
 lab=agnd}
 N -1200 -360 -1200 -330 {
 lab=bias_0v6}
 N -1200 -270 -1200 -240 {
 lab=agnd}
+N -1540 -200 -1540 -180 {
+lab=amp_out_05}
+N -1540 -120 -1540 -100 {
+lab=agnd}
+N -940 770 -940 820 {
+lab=agnd}
+N -940 770 -930 770 {
+lab=agnd}
+N -940 720 -940 740 {
+lab=Tele_Inter}
+N -940 680 -940 720 {
+lab=Tele_Inter}
+N -930 650 -930 770 {
+lab=agnd}
+N -640 730 -600 730 {
+lab=agnd}
+N -640 730 -640 790 {
+lab=agnd}
+N -640 790 -600 790 {
+lab=agnd}
+N -600 760 -600 790 {
+lab=agnd}
+N -1020 770 -980 770 {
+lab=#net1}
+N -1360 -360 -1360 -330 {
+lab=bias_0v8}
+N -1360 -270 -1360 -240 {
+lab=agnd}
 C {devices/vsource.sym} -460 -90 0 0 {name=Vsrc_agnd value=0 savecurrent=false}
 C {devices/vsource.sym} -370 -90 0 0 {name=Vsrc_avdd value=1.8 savecurrent=false}
-C {devices/vsource.sym} -190 -90 0 0 {name=Vsrc_stim value="1.2 AC 1" savecurrent=false}
+C {devices/vsource.sym} -190 -90 0 0 {name=Vsrc_stim value="0.01 AC 1" savecurrent=false}
 C {devices/gnd.sym} -460 -30 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -460 -150 0 0 {name=p1 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -370 -30 0 0 {name=p2 sig_type=std_logic lab=agnd}
@@ -245,19 +265,19 @@ foreach pmos xm4
  echo
 end
 
-foreach nmos xm6
+foreach nmos_lvt xm6 xm9
  * Save stats
  save @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[gm]
- let vth   = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vth]
- let vgs   = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
- let vds   = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vds]
- let vdsat = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vdsat]
- let gm    = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[gm]
- let gds   = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[gds]
+ let vth   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vth]
+ let vgs   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
+ let vds   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vds]
+ let vdsat = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+ let gm    = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[gm]
+ let gds   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[gds]
 
 
  * Print stats
- echo Stats for $nmos:
+ echo Stats for $nmos_lvt:
  print vth
  print vgs
  print vds
@@ -318,26 +338,26 @@ foreach pmos xm4
 end
 
 * Print region of operation
-foreach nmos xm6
+foreach nmos_lvt xm6 xm9
  * Save stats
- let vds = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vds]
- let vgs = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
- let vth = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[vth]
+ let vds = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vds]
+ let vgs = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
+ let vth = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vth]
 
  * Check and print regions
  if (vgs <= vth)
-  echo $nmos: N Cutoff
+  echo $nmos_lvt: N Cutoff
   print vgs
   print vth
  end
  if (vgs > vth) & (vds <= (vgs - vth))
-  echo $nmos: N Triode
+  echo $nmos_lvt: N Triode
   print vgs
   print vth
   print vds
  end
  if (vgs > vth) & (vds > (vgs - vth))
-  echo $nmos: N Saturation
+  echo $nmos_lvt: N Saturation
  end
 end
 
@@ -556,8 +576,8 @@ C {devices/lab_wire.sym} -1440 -200 0 1 {name=Vsrc_stim17 sig_type=std_logic lab
 C {devices/lab_wire.sym} -1440 -100 0 1 {name=p30 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -100 360 0 1 {name=Vsrc_stim15 sig_type=std_logic lab=amp_out_04}
 C {sky130_fd_pr/nfet_01v8.sym} -960 650 0 0 {name=M7
-L=0.3
-W=2
+L=0.15
+W=8
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -570,18 +590,18 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/res_high_po_0p35.sym} -940 550 0 0 {name=R3
-L=10
+L=1.2
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {devices/lab_wire.sym} -940 600 0 1 {name=Vsrc_stim18 sig_type=std_logic lab=amp_out_05}
 C {devices/lab_wire.sym} -940 500 0 1 {name=p31 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -980 710 0 0 {name=Vsrc_stim19 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -940 760 0 1 {name=p32 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1160 770 0 0 {name=Vsrc_stim19 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -940 820 0 1 {name=p32 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -960 550 0 0 {name=p33 sig_type=std_logic lab=agnd}
-C {sky130_fd_pr/nfet_01v8.sym} -960 710 0 0 {name=M8
-L=2
-W=4
+C {sky130_fd_pr/nfet_01v8.sym} -960 770 0 0 {name=M8
+L=0.6
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -596,4 +616,33 @@ spiceprefix=X
 C {devices/vsource.sym} -1200 -300 0 0 {name=Vsrc_bias_0v6 value=0.6 savecurrent=false}
 C {devices/lab_wire.sym} -1200 -240 0 0 {name=p35 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -1200 -360 0 0 {name=p36 sig_type=std_logic lab=bias_0v6}
-C {devices/lab_wire.sym} -980 650 0 0 {name=p34 sig_type=std_logic lab=bias_0v6}
+C {devices/capa.sym} -1540 -150 0 0 {name=C_Load5
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_wire.sym} -1540 -200 0 1 {name=Vsrc_stim20 sig_type=std_logic lab=amp_out_05}
+C {devices/lab_wire.sym} -1540 -100 0 1 {name=p37 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -980 650 0 0 {name=p34 sig_type=std_logic lab=bias_1v2}
+C {devices/lab_wire.sym} -940 700 0 0 {name=Vsrc_stim21 sig_type=std_logic lab=Tele_Inter}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -620 760 0 0 {name=M9
+L=0.6
+W=2
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -640 730 0 1 {name=p40 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -1020 790 0 0 {name=x9}
+C {devices/lab_wire.sym} -1100 670 0 0 {name=p41 sig_type=std_logic lab=bias_0v8}
+C {devices/lab_wire.sym} -1120 850 0 1 {name=p42 sig_type=std_logic lab=agnd}
+C {devices/vsource.sym} -1360 -300 0 0 {name=Vsrc_bias_0v8 value=0.8 savecurrent=false}
+C {devices/lab_wire.sym} -1360 -240 0 0 {name=p43 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1360 -360 0 0 {name=p44 sig_type=std_logic lab=bias_0v8}

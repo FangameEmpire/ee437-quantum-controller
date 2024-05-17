@@ -170,7 +170,7 @@ write TB_Filters.raw
 
 .endc
 " }
-C {devices/vsource.sym} -440 120 0 0 {name=Vsrc_stim value="1.8 AC 1" savecurrent=false}
+C {devices/vsource.sym} -440 120 0 0 {name=Vsrc_stim value="0.01 AC 1" savecurrent=false}
 C {devices/lab_wire.sym} -440 180 0 0 {name=p4 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -440 60 0 0 {name=p10 sig_type=std_logic lab=stim}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -220 -70 0 0 {name=C1 model=cap_mim_m3_1 W=6.2 L=6 MF=1 spiceprefix=X}
@@ -200,7 +200,7 @@ C {devices/lab_wire.sym} 20 -180 0 0 {name=p12 sig_type=std_logic lab=stim}
 C {devices/lab_wire.sym} 20 -20 0 0 {name=p13 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} 160 -100 0 0 {name=p14 sig_type=std_logic lab=out_03}
 C {devices/res.sym} 20 -330 0 0 {name=R2
-value=380
+value=380.1
 footprint=1206
 device=resistor
 m=1}
