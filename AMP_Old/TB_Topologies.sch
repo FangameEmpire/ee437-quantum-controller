@@ -267,7 +267,7 @@ end
 
 foreach nmos_lvt xm6 xm9
  * Save stats
- save @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[gm]
+ save @m.\{$nmos\}.msky130_fd_pr__nfet_01v8_lvt[gm]
  let vth   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vth]
  let vgs   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
  let vds   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vds]
@@ -549,14 +549,14 @@ footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -1340 -200 0 1 {name=Vsrc_stim14 sig_type=std_logic lab=amp_out_03}
 C {devices/lab_wire.sym} -1340 -100 0 1 {name=p20 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -1180 360 0 0 {name=x1}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -1240 380 0 0 {name=x2}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -860 360 0 0 {name=x3}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -920 380 0 0 {name=x4}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -540 360 0 0 {name=x5}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -600 380 0 0 {name=x6}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -220 360 0 0 {name=x7}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -280 380 0 0 {name=x8}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -1180 360 0 0 {name=x1}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -1240 380 0 0 {name=x2}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -860 360 0 0 {name=x3}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -920 380 0 0 {name=x4}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -540 360 0 0 {name=x5}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -600 380 0 0 {name=x6}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Amp.sym} -220 360 0 0 {name=x7}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -280 380 0 0 {name=x8}
 C {devices/lab_wire.sym} -240 450 0 1 {name=p21 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -1200 270 0 1 {name=p22 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} -880 270 0 1 {name=p23 sig_type=std_logic lab=avdd}
@@ -640,7 +640,7 @@ model=nfet_01v8_lvt
 spiceprefix=X
 }
 C {devices/lab_wire.sym} -640 730 0 1 {name=p40 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -1020 790 0 0 {name=x9}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CPL_CM.sym} -1020 790 0 0 {name=x9}
 C {devices/lab_wire.sym} -1100 670 0 0 {name=p41 sig_type=std_logic lab=bias_0v8}
 C {devices/lab_wire.sym} -1120 850 0 1 {name=p42 sig_type=std_logic lab=agnd}
 C {devices/vsource.sym} -1360 -300 0 0 {name=Vsrc_bias_0v8 value=0.8 savecurrent=false}
