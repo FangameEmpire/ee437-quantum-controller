@@ -61,11 +61,7 @@ N -700 -70 -660 -70 {
 lab=iin}
 N -620 -120 -560 -120 {
 lab=Vb1}
-N -940 100 -940 120 {
-lab=avdd}
 N -950 270 -940 270 {
-lab=agnd}
-N -950 170 -940 170 {
 lab=agnd}
 N -940 200 -940 240 {
 lab=vcm_d}
@@ -73,14 +69,6 @@ N -940 220 -840 220 {
 lab=vcm_d}
 N -900 220 -900 270 {
 lab=vcm_d}
-N -900 170 -810 170 {
-lab=avdd}
-N -810 170 -810 180 {
-lab=avdd}
-N -950 170 -950 270 {
-lab=agnd}
-N -900 120 -900 170 {
-lab=avdd}
 N -780 220 -720 220 {
 lab=vcm}
 N -340 -600 -340 -580 {
@@ -99,10 +87,6 @@ N -340 -580 -160 -580 {
 lab=agnd}
 N -1040 350 -980 350 {
 lab=iin}
-N -940 120 -940 140 {
-lab=avdd}
-N -940 120 -900 120 {
-lab=avdd}
 N -940 350 -940 400 {
 lab=agnd}
 N -940 400 -810 400 {
@@ -113,6 +97,36 @@ N -940 300 -940 320 {
 lab=tail}
 N -940 300 -890 300 {
 lab=tail}
+N -900 170 -900 200 {
+lab=vcm_d}
+N -940 200 -900 200 {
+lab=vcm_d}
+N -940 100 -940 170 {
+lab=avdd}
+N -950 220 -950 270 {
+lab=agnd}
+N -810 130 -810 180 {
+lab=avdd}
+N -940 130 -810 130 {
+lab=avdd}
+N -540 40 -540 90 {
+lab=avdd}
+N -500 90 -500 120 {
+lab=Vb2}
+N -540 120 -500 120 {
+lab=Vb2}
+N -540 120 -540 200 {
+lab=Vb2}
+N -540 230 -540 260 {
+lab=agnd}
+N -500 200 -500 230 {
+lab=Vb2}
+N -540 200 -500 200 {
+lab=Vb2}
+N -540 260 -540 280 {
+lab=agnd}
+N -540 160 -480 160 {
+lab=Vb2}
 C {devices/code_shown.sym} 20 -370 0 0 {name=NGSPICE
 only_toplevel=true
 value="* this option enables mos model bin 
@@ -127,10 +141,10 @@ op
 * Print newline
 echo
 
-set nmos_list = ( xm1 xm2 xm7 xm8 xm9 xm10 xm5  )
+set nmos_list = ( xm1 xm2 xm7 xm9 xm5 xm4  )
 set pmos_list = (  )
-set nmos_lvt_list = ( xm6 )
-set pmos_lvt_list = (  )
+set nmos_lvt_list = ( xm6 xm10 )
+set pmos_lvt_list = ( xm8 xm3 )
 
 * Print stats for each MOSFET
 foreach nmos $nmos_list
@@ -404,7 +418,7 @@ C {sky130_fd_pr/corner.sym} 10 -520 0 0 {name=CORNER only_toplevel=true corner=t
 C {devices/lab_wire.sym} -620 -220 0 0 {name=p12 sig_type=std_logic lab=avdd}
 C {sky130_fd_pr/nfet_01v8.sym} -640 -70 0 0 {name=M5
 L=0.5
-W=8
+W=8.5
 nf=4
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -450,36 +464,8 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -920 170 0 1 {name=M8
-L=0.15
-W=2.5
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
 C {sky130_fd_pr/nfet_01v8.sym} -920 270 0 1 {name=M9
 L=0.15
-W=16
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/nfet_01v8.sym} -810 200 3 1 {name=M10
-L=2
 W=0.5
 nf=1 
 mult=1
@@ -513,4 +499,65 @@ C {devices/lab_wire.sym} -890 220 0 1 {name=p27 sig_type=std_logic lab=vcm_d
 C {devices/lab_wire.sym} -950 220 0 0 {name=p20 sig_type=std_logic lab=agnd
 }
 C {devices/lab_wire.sym} -890 300 0 1 {name=p26 sig_type=std_logic lab=tail
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -920 170 0 1 {name=M8
+L=0.35
+W=20
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -810 200 3 1 {name=M10
+L=2
+W=0.5
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -520 90 0 1 {name=M3
+L=0.35
+W=1
+nf=1
+mult=32
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -540 40 0 0 {name=p28 sig_type=std_logic lab=avdd}
+C {sky130_fd_pr/nfet_01v8.sym} -520 230 0 1 {name=M4
+L=0.8
+W=0.5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -540 280 0 1 {name=p29 sig_type=std_logic lab=agnd
+}
+C {devices/lab_wire.sym} -480 160 0 1 {name=p30 sig_type=std_logic lab=Vb2
 }

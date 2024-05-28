@@ -17,8 +17,9 @@ subdivx=8
 
  unity=1
 dataset=-1
-color=4
-node=gain
+color="4 5"
+node="gain_sch
+gain_gds"
 sweep=frequency
 
 
@@ -43,8 +44,9 @@ subdivx=8
 
  unity=1
 dataset=-1
-color=4
-node=ratio
+color="4 5"
+node="ratio_sch
+ratio_gds"
 sweep=frequency
 
 
@@ -70,19 +72,7 @@ N -120 -60 -120 -20 {
 lab=ibias_n_50u}
 N -120 -160 -120 -120 {
 lab=avdd}
-N -250 160 -200 160 {
-lab=voutn}
-N -250 120 -200 120 {
-lab=voutp}
-N -140 170 -140 190 {
-lab=agnd}
-N -80 170 -80 190 {
-lab=agnd}
-N -140 90 -140 110 {
-lab=voutp}
-N -80 90 -80 110 {
-lab=voutn}
-N -140 190 -80 190 {
+N -140 200 -140 220 {
 lab=agnd}
 N -540 -40 -540 -20 {
 lab=agnd}
@@ -91,11 +81,13 @@ lab=agnd}
 N -540 -20 -440 -20 {
 lab=agnd}
 N -440 -120 -440 -100 {
-lab=vinn}
+lab=#net1}
 N -540 -120 -540 -100 {
-lab=vinp}
-N -340 40 -340 60 {
+lab=#net2}
+N -360 40 -360 60 {
 lab=ibias_n_50u}
+N -220 140 -140 140 {
+lab=vout_00}
 C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
 only_toplevel=true
 value=
@@ -324,10 +316,15 @@ ac dec 100 1 1e11
 remzerovec
 
 * Calculate gain
-let vout_diff = v(voutp)- v(voutn)
-let vin_diff = v(vinp)- v(vinn)
-let gain = db(mag(vout_diff/vin_diff))
-let ratio = (vout_diff/vin_diff)
+let vin_diff = v(vinp) - v(vinn)
+
+let vout_00 = v(vout_00)
+let gain_sch = db(mag(vout_00/vin_diff))
+let ratio_sch = (vout_00/vin_diff)
+
+*let vout_01 = v(vout_01)
+*let gain_gds = db(mag(vout_01/vin_diff))
+*let ratio_gds = (vout_01/vin_diff)
 
 write TB_Final_Cascode_Mixed.raw
 
@@ -348,30 +345,24 @@ descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {sky130_fd_pr/corner.sym} 20 -190 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {devices/lab_wire.sym} -200 120 0 0 {name=p1 sig_type=std_logic lab=voutp}
-C {devices/lab_wire.sym} -200 160 0 0 {name=p6 sig_type=std_logic lab=voutn}
-C {devices/capa.sym} -80 140 0 0 {name=C3
+C {devices/lab_wire.sym} -140 140 0 0 {name=p1 sig_type=std_logic lab=vout_00}
+C {devices/capa.sym} -140 170 0 0 {name=C4
 m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/capa.sym} -140 140 0 0 {name=C4
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 90 0 0 {name=p18 sig_type=std_logic lab=voutn}
-C {devices/lab_wire.sym} -140 90 0 0 {name=p19 sig_type=std_logic lab=voutp}
-C {devices/lab_wire.sym} -90 190 0 0 {name=p20 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -540 -120 0 0 {name=p2 sig_type=std_logic lab=vinp}
-C {devices/lab_wire.sym} -440 -120 0 0 {name=p5 sig_type=std_logic lab=vinn}
+C {devices/lab_wire.sym} -140 220 0 0 {name=p20 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -540 -180 0 0 {name=p2 sig_type=std_logic lab=vinp}
+C {devices/lab_wire.sym} -440 -180 0 0 {name=p5 sig_type=std_logic lab=vinn}
 C {devices/vsource.sym} -540 -70 0 0 {name=V1 value="0.05 AC 0.5 0" savecurrent=false}
 C {devices/vsource.sym} -440 -70 0 0 {name=V2 value="0.05 AC 0.5 180" savecurrent=false}
 C {devices/lab_wire.sym} -470 -20 0 0 {name=p10 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -400 120 0 0 {name=p11 sig_type=std_logic lab=vinn}
-C {devices/lab_wire.sym} -400 160 0 0 {name=p12 sig_type=std_logic lab=vinp}
-C {devices/lab_wire.sym} -360 50 0 0 {name=p13 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -360 230 0 1 {name=p14 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -340 40 0 1 {name=p15 sig_type=std_logic lab=ibias_n_50u
+C {devices/lab_wire.sym} -460 120 0 0 {name=p11 sig_type=std_logic lab=vinn}
+C {devices/lab_wire.sym} -460 160 0 0 {name=p12 sig_type=std_logic lab=vinp}
+C {devices/lab_wire.sym} -400 40 0 0 {name=p13 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 240 0 1 {name=p14 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -360 40 0 1 {name=p15 sig_type=std_logic lab=ibias_n_50u
 }
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_Mixed.sym} -320 140 0 0 {name=x1}
+C {devices/vsource.sym} -540 -150 0 0 {name=V3 value=1 savecurrent=false}
+C {devices/vsource.sym} -440 -150 0 0 {name=V4 value=1 savecurrent=false}
