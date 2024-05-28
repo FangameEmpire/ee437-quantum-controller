@@ -5,14 +5,14 @@ K {}
 V {}
 S {}
 E {}
-B 2 -940 -350 -510 -30 {flags=graph
+B 2 -940 -340 -510 -20 {flags=graph
 
 
 divy = 5
 subdivy=4
 
 
-divx=4
+divx=6
 subdivx=8
 
  unity=1
@@ -35,16 +35,16 @@ y2=100
 
 unitx=1
 y1=00
-x1=0
+x1=0.0
 x2=11}
-B 2 -940 -690 -510 -370 {flags=graph
+B 2 -940 -680 -510 -360 {flags=graph
 
 
-divy = 5
-subdivy=8
+
+subdivy=1
 
 
-divx=4
+divx=6
 subdivx=8
 
  unity=1
@@ -69,7 +69,9 @@ unitx=1
 y1=-3
 x1=0
 x2=11
-y2=3}
+y2=3
+divy=5
+hilight_wave=-1}
 N -460 -60 -460 -30 {
 lab=GND}
 N -460 -150 -460 -120 {
@@ -100,31 +102,31 @@ N -1040 -200 -1040 -180 {
 lab=amp_out_00}
 N -1040 -120 -1040 -100 {
 lab=agnd}
-N -740 20 -740 40 {
+N -940 280 -940 300 {
 lab=avdd}
-N -740 170 -740 220 {
+N -940 430 -940 480 {
 lab=agnd}
-N -740 100 -740 140 {
+N -940 360 -940 400 {
 lab=amp_out_01}
-N -780 40 -780 70 {
+N -980 300 -980 330 {
 lab=avdd}
-N -780 40 -740 40 {
+N -980 300 -940 300 {
 lab=avdd}
-N -740 170 -730 170 {
+N -940 430 -930 430 {
 lab=agnd}
-N -740 70 -730 70 {
+N -940 330 -930 330 {
 lab=agnd}
-N -730 70 -730 170 {
+N -930 330 -930 430 {
 lab=agnd}
 N -1140 -200 -1140 -180 {
 lab=amp_out_01}
 N -1140 -120 -1140 -100 {
 lab=agnd}
-N -560 170 -560 220 {
+N -380 430 -380 480 {
 lab=agnd}
-N -560 100 -560 140 {
+N -380 360 -380 400 {
 lab=amp_out_02}
-N -560 20 -560 70 {
+N -380 280 -380 330 {
 lab=avdd}
 N -380 20 -380 40 {
 lab=avdd}
@@ -140,63 +142,93 @@ N -1340 -200 -1340 -180 {
 lab=amp_out_03}
 N -1340 -120 -1340 -100 {
 lab=agnd}
-N -1200 450 -240 450 {
-lab=agnd}
-N -1020 440 -1020 450 {
-lab=agnd}
-N -700 440 -700 450 {
-lab=agnd}
-N -380 440 -380 450 {
-lab=agnd}
-N -1340 440 -1340 450 {
-lab=agnd}
-N -1340 450 -1200 450 {
-lab=agnd}
 N -1440 -200 -1440 -180 {
 lab=amp_out_04}
 N -1440 -120 -1440 -100 {
 lab=agnd}
-N -940 500 -940 520 {
+N -940 600 -940 640 {
 lab=avdd}
-N -940 580 -940 620 {
-lab=amp_out_05}
-N -940 650 -930 650 {
+N -940 670 -930 670 {
 lab=agnd}
 N -1200 -360 -1200 -330 {
 lab=bias_0v6}
 N -1200 -270 -1200 -240 {
 lab=agnd}
-N -1540 -200 -1540 -180 {
-lab=amp_out_05}
-N -1540 -120 -1540 -100 {
+N -940 790 -940 840 {
 lab=agnd}
-N -940 770 -940 820 {
+N -940 790 -930 790 {
 lab=agnd}
-N -940 770 -930 770 {
+N -940 740 -940 760 {
+lab=amp_out_04}
+N -940 700 -940 740 {
+lab=amp_out_04}
+N -930 670 -930 790 {
 lab=agnd}
-N -940 720 -940 740 {
-lab=Tele_Inter}
-N -940 680 -940 720 {
-lab=Tele_Inter}
-N -930 650 -930 770 {
-lab=agnd}
-N -640 730 -600 730 {
-lab=agnd}
-N -640 730 -640 790 {
-lab=agnd}
-N -640 790 -600 790 {
-lab=agnd}
-N -600 760 -600 790 {
-lab=agnd}
-N -1020 770 -980 770 {
+N -1020 790 -980 790 {
 lab=#net1}
 N -1360 -360 -1360 -330 {
 lab=bias_0v8}
 N -1360 -270 -1360 -240 {
 lab=agnd}
+N -1120 100 -1120 170 {
+lab=amp_in_00}
+N -1120 170 -980 170 {
+lab=amp_in_00}
+N -1220 170 -1180 170 {
+lab=stim}
+N -560 100 -560 170 {
+lab=amp_in_03}
+N -560 170 -420 170 {
+lab=amp_in_03}
+N -660 170 -620 170 {
+lab=stim}
+N -600 360 -600 430 {
+lab=amp_in_02}
+N -700 430 -660 430 {
+lab=stim}
+N -600 430 -420 430 {
+lab=amp_in_02}
+N -420 330 -420 430 {
+lab=amp_in_02}
+N -1120 430 -980 430 {
+lab=amp_in_01}
+N -1220 430 -1180 430 {
+lab=stim}
+N -380 750 -380 800 {
+lab=agnd}
+N -380 680 -380 720 {
+lab=amp_out_05}
+N -380 600 -380 650 {
+lab=avdd}
+N -600 750 -420 750 {
+lab=amp_in_05}
+N -420 700 -380 700 {
+lab=amp_out_05}
+N -420 650 -420 700 {
+lab=amp_out_05}
+N -1460 230 -1460 280 {
+lab=agnd}
+N -1460 180 -1460 200 {
+lab=ibias}
+N -1460 200 -1420 200 {
+lab=ibias}
+N -1420 200 -1420 230 {
+lab=ibias}
+N -1120 380 -1120 430 {
+lab=amp_in_01}
+N -1260 380 -1120 380 {
+lab=amp_in_01}
+N -1180 100 -1120 100 {
+lab=amp_in_00}
+N -700 750 -660 750 {
+lab=stim}
+N -600 700 -600 750 {
+lab=amp_in_05}
+N -660 700 -600 700 {
+lab=amp_in_05}
 C {devices/vsource.sym} -460 -90 0 0 {name=Vsrc_agnd value=0 savecurrent=false}
 C {devices/vsource.sym} -370 -90 0 0 {name=Vsrc_avdd value=1.8 savecurrent=false}
-C {devices/vsource.sym} -190 -90 0 0 {name=Vsrc_stim value="0.01 AC 1" savecurrent=false}
+C {devices/vsource.sym} -190 -90 0 0 {name=Vsrc_stim value="0.05 AC 1" savecurrent=false}
 C {devices/gnd.sym} -460 -30 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -460 -150 0 0 {name=p1 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -370 -30 0 0 {name=p2 sig_type=std_logic lab=agnd}
@@ -217,8 +249,14 @@ op
 * Print newline
 echo
 
+* Store MOS lists
+set nmos_list = ( xm1 xm3 xm4 xm5 xm7 )
+set pmos_list = ( xm6 xm8 xm10 )
+set nmos_lvt_list = ( xm2 xm9 )
+set pmos_lvt_list = (  )
+
 * Print stats for each MOSFET
-foreach nmos xm1 xm2 xm3 xm5 x1.xm1 x3.xm1 x5.xm1 x7.xm1 xm7 xm8
+foreach nmos $nmos_list
  * Save stats
  save @m.\{$nmos\}.msky130_fd_pr__nfet_01v8[gm]
  let vth   = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8[vth]
@@ -242,7 +280,7 @@ foreach nmos xm1 xm2 xm3 xm5 x1.xm1 x3.xm1 x5.xm1 x7.xm1 xm7 xm8
  echo
 end
 
-foreach pmos xm4
+foreach pmos $pmos_list
  * Save stats
  save @m.\{$pmos\}.msky130_fd_pr__nfet_01v8[gm]
  let vth   = @m.\{$pmos\}.msky130_fd_pr__pfet_01v8[vth]
@@ -265,7 +303,7 @@ foreach pmos xm4
  echo
 end
 
-foreach nmos_lvt xm6 xm9
+foreach nmos_lvt $nmos_lvt_list
  * Save stats
  save @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[gm]
  let vth   = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vth]
@@ -289,9 +327,36 @@ foreach nmos_lvt xm6 xm9
  echo
 end
 
+foreach pmos_lvt $pmos_lvt_list
+ * Save stats
+ save @m.\{$pmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[gm]
+ let vth   = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vth]
+ let vgs   = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vgs]
+ let vds   = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vds]
+ let vdsat = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vdsat]
+ let gm    = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[gm]
+ let gds   = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[gds]
+
+
+ * Print stats
+ echo Stats for $pmos_lvt:
+ print vth
+ print vgs
+ print vds
+ print vdsat
+ print gm
+ print gds
+
+ * Print newline
+ echo
+end
+
 * Print region of operation
 echo Regions of Operation:
-foreach nmos xm1 xm2 xm3 xm5 x1.xm1 x3.xm1 x5.xm1 x7.xm1 xm7 xm8
+echo
+
+echo NMOS:
+foreach nmos $nmos_list
  * Save stats
  let vds = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8[vds]
  let vgs = @m.\{$nmos\}.msky130_fd_pr__nfet_01v8[vgs]
@@ -313,8 +378,10 @@ foreach nmos xm1 xm2 xm3 xm5 x1.xm1 x3.xm1 x5.xm1 x7.xm1 xm7 xm8
   echo $nmos: N Saturation
  end
 end
+echo
 
-foreach pmos xm4
+echo PMOS: 
+foreach pmos $pmos_list
  * Save stats
  let vds = @m.\{$pmos\}.msky130_fd_pr__pfet_01v8[vds]
  let vgs = @m.\{$pmos\}.msky130_fd_pr__pfet_01v8[vgs]
@@ -336,9 +403,10 @@ foreach pmos xm4
   echo $pmos: P Saturation
  end
 end
+echo
 
-* Print region of operation
-foreach nmos_lvt xm6 xm9
+echo NMOS_lvt:
+foreach nmos_lvt $nmos_lvt_list
  * Save stats
  let vds = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vds]
  let vgs = @m.\{$nmos_lvt\}.msky130_fd_pr__nfet_01v8_lvt[vgs]
@@ -360,14 +428,37 @@ foreach nmos_lvt xm6 xm9
   echo $nmos_lvt: N Saturation
  end
 end
+echo
 
-* Print newline
+echo PMOS_lvt:
+foreach pmos_lvt $pmos_lvt_list
+ * Save stats
+ let vds = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vds]
+ let vgs = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vgs]
+ let vth = @m.\{$pmos_lvt\}.msky130_fd_pr__pfet_01v8_lvt[vth]
+
+ * Check and print regions
+ if (abs(vgs) <= abs(vth))
+  echo $pmos_lvt: P Cutoff
+  print vgs
+  print vth
+ end
+ if (abs(vgs) > abs(vth)) & (abs(vds) <= (abs(vgs) - abs(vth)))
+  echo $pmos_lvt: P Triode
+  print vgs
+  print vth
+  print vds
+ end
+ if (abs(vgs) > abs(vth)) & (abs(vds) > (abs(vgs) - abs(vth)))
+  echo $pmos_lvt: P Saturation
+ end
+end
 echo
 
 * Sweep frequency
 write TB_Topologies.raw
 set appendwrite
-ac dec 100 1 1e11
+ac dec 200 1e0 1e11
 remzerovec
 
 * Calculate gain
@@ -402,15 +493,15 @@ tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw dc
 "
 }
-C {devices/isource.sym} -280 -90 0 0 {name=Isrc_ibias value=100u}
+C {devices/isource.sym} -280 -90 0 0 {name=Isrc_ibias value=50u}
 C {devices/lab_wire.sym} -280 -150 0 0 {name=p6 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} -280 -30 0 0 {name=p7 sig_type=std_logic lab=ibias}
 C {devices/vsource.sym} -1040 -300 0 0 {name=Vsrc_bias_1v2 value=1.2 savecurrent=false}
 C {devices/lab_wire.sym} -1040 -240 0 0 {name=p38 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -1040 -360 0 0 {name=p39 sig_type=std_logic lab=bias_1v2}
 C {sky130_fd_pr/nfet_01v8.sym} -960 170 0 0 {name=M1
-L=2
-W=4
+L=0.15
+W=10
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -423,13 +514,13 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/res_high_po_0p35.sym} -940 70 0 0 {name=R1
-L=10
+L=5
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {devices/lab_wire.sym} -940 120 0 1 {name=Vsrc_stim4 sig_type=std_logic lab=amp_out_00}
 C {devices/lab_wire.sym} -940 20 0 1 {name=p5 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -980 170 0 0 {name=Vsrc_stim3 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -1220 170 0 0 {name=Vsrc_stim3 sig_type=std_logic lab=stim}
 C {devices/capa.sym} -1040 -150 0 0 {name=C_Load
 m=1
 value=1p
@@ -439,9 +530,9 @@ C {devices/lab_wire.sym} -940 220 0 1 {name=p8 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -960 70 0 0 {name=p9 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -1040 -200 0 1 {name=Vsrc_stim5 sig_type=std_logic lab=amp_out_00}
 C {devices/lab_wire.sym} -1040 -100 0 1 {name=p4 sig_type=std_logic lab=agnd}
-C {sky130_fd_pr/nfet_01v8.sym} -760 170 0 0 {name=M2
-L=4
-W=16
+C {sky130_fd_pr/nfet_01v8.sym} -960 430 0 0 {name=M3
+L=0.15
+W=40
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -453,9 +544,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -760 70 0 0 {name=M3
-L=0.3
-W=4
+C {sky130_fd_pr/nfet_01v8.sym} -960 330 0 0 {name=M4
+L=0.15
+W=1.5
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -467,10 +558,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/lab_wire.sym} -740 20 0 1 {name=p10 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -740 220 0 1 {name=p11 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -780 170 0 0 {name=Vsrc_stim6 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -740 120 0 1 {name=Vsrc_stim7 sig_type=std_logic lab=amp_out_01}
+C {devices/lab_wire.sym} -940 280 0 1 {name=p10 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -940 480 0 1 {name=p11 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -940 380 0 1 {name=Vsrc_stim7 sig_type=std_logic lab=amp_out_01}
 C {devices/capa.sym} -1140 -150 0 0 {name=C_Load1
 m=1
 value=1p
@@ -478,9 +568,9 @@ footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -1140 -200 0 1 {name=Vsrc_stim8 sig_type=std_logic lab=amp_out_01}
 C {devices/lab_wire.sym} -1140 -100 0 1 {name=p12 sig_type=std_logic lab=agnd}
-C {sky130_fd_pr/pfet_01v8.sym} -580 70 0 0 {name=M4
-L=2
-W=2
+C {sky130_fd_pr/pfet_01v8.sym} -400 330 0 0 {name=M6
+L=0.15
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -492,38 +582,21 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -580 170 0 0 {name=M5
-L=1
-W=3
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {devices/lab_wire.sym} -560 20 0 1 {name=p13 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -560 220 0 1 {name=p14 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -600 170 0 0 {name=Vsrc_stim9 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -560 120 0 1 {name=Vsrc_stim10 sig_type=std_logic lab=amp_out_02}
-C {devices/lab_wire.sym} -600 70 0 0 {name=p15 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -380 280 0 1 {name=p13 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -380 480 0 1 {name=p14 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -380 380 0 1 {name=Vsrc_stim10 sig_type=std_logic lab=amp_out_02}
 C {sky130_fd_pr/res_high_po_0p35.sym} -380 70 0 0 {name=R2
-L=2
+L=5
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {devices/lab_wire.sym} -380 120 0 1 {name=Vsrc_stim11 sig_type=std_logic lab=amp_out_03}
 C {devices/lab_wire.sym} -380 20 0 1 {name=p16 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -420 170 0 0 {name=Vsrc_stim12 sig_type=std_logic lab=stim}
 C {devices/lab_wire.sym} -380 220 0 1 {name=p17 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -400 70 0 0 {name=p18 sig_type=std_logic lab=agnd}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} -400 170 0 0 {name=M6
-L=0.3
-W=2
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -400 170 0 0 {name=M2
+L=0.15
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -549,24 +622,6 @@ footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -1340 -200 0 1 {name=Vsrc_stim14 sig_type=std_logic lab=amp_out_03}
 C {devices/lab_wire.sym} -1340 -100 0 1 {name=p20 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -1180 360 0 0 {name=x1}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -1240 380 0 0 {name=x2}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -860 360 0 0 {name=x3}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -920 380 0 0 {name=x4}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -540 360 0 0 {name=x5}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -600 380 0 0 {name=x6}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/Final_Amp.sym} -220 360 0 0 {name=x7}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -280 380 0 0 {name=x8}
-C {devices/lab_wire.sym} -240 450 0 1 {name=p21 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -1200 270 0 1 {name=p22 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -880 270 0 1 {name=p23 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -560 270 0 1 {name=p24 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -240 270 0 1 {name=p25 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -360 260 0 0 {name=p26 sig_type=std_logic lab=bias_1v2}
-C {devices/lab_wire.sym} -680 260 0 0 {name=p27 sig_type=std_logic lab=bias_1v2}
-C {devices/lab_wire.sym} -1000 260 0 0 {name=p28 sig_type=std_logic lab=bias_1v2}
-C {devices/lab_wire.sym} -1320 260 0 0 {name=p29 sig_type=std_logic lab=bias_1v2}
-C {devices/lab_wire.sym} -1380 360 0 0 {name=Vsrc_stim16 sig_type=std_logic lab=stim}
 C {devices/capa.sym} -1440 -150 0 0 {name=C_Load4
 m=1
 value=1p
@@ -574,32 +629,11 @@ footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} -1440 -200 0 1 {name=Vsrc_stim17 sig_type=std_logic lab=amp_out_04}
 C {devices/lab_wire.sym} -1440 -100 0 1 {name=p30 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -100 360 0 1 {name=Vsrc_stim15 sig_type=std_logic lab=amp_out_04}
-C {sky130_fd_pr/nfet_01v8.sym} -960 650 0 0 {name=M7
-L=0.15
-W=8
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/res_high_po_0p35.sym} -940 550 0 0 {name=R3
-L=1.2
-model=res_high_po_0p35
-spiceprefix=X
-mult=1}
-C {devices/lab_wire.sym} -940 600 0 1 {name=Vsrc_stim18 sig_type=std_logic lab=amp_out_05}
-C {devices/lab_wire.sym} -940 500 0 1 {name=p31 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -1160 770 0 0 {name=Vsrc_stim19 sig_type=std_logic lab=stim}
-C {devices/lab_wire.sym} -940 820 0 1 {name=p32 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -960 550 0 0 {name=p33 sig_type=std_logic lab=agnd}
-C {sky130_fd_pr/nfet_01v8.sym} -960 770 0 0 {name=M8
+C {devices/lab_wire.sym} -940 720 0 1 {name=Vsrc_stim18 sig_type=std_logic lab=amp_out_04}
+C {devices/lab_wire.sym} -940 600 0 1 {name=p31 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -1160 790 0 0 {name=Vsrc_stim19 sig_type=std_logic lab=stim}
+C {devices/lab_wire.sym} -940 840 0 1 {name=p32 sig_type=std_logic lab=agnd}
+C {sky130_fd_pr/nfet_01v8.sym} -960 790 0 0 {name=M7
 L=0.6
 W=2
 nf=1 
@@ -616,18 +650,58 @@ spiceprefix=X
 C {devices/vsource.sym} -1200 -300 0 0 {name=Vsrc_bias_0v6 value=0.6 savecurrent=false}
 C {devices/lab_wire.sym} -1200 -240 0 0 {name=p35 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -1200 -360 0 0 {name=p36 sig_type=std_logic lab=bias_0v6}
-C {devices/capa.sym} -1540 -150 0 0 {name=C_Load5
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -1540 -200 0 1 {name=Vsrc_stim20 sig_type=std_logic lab=amp_out_05}
-C {devices/lab_wire.sym} -1540 -100 0 1 {name=p37 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -980 650 0 0 {name=p34 sig_type=std_logic lab=bias_1v2}
-C {devices/lab_wire.sym} -940 700 0 0 {name=Vsrc_stim21 sig_type=std_logic lab=Tele_Inter}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} -620 760 0 0 {name=M9
-L=0.6
-W=2
+C {devices/lab_wire.sym} -980 670 0 0 {name=p34 sig_type=std_logic lab=bias_1v2}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -1020 810 0 0 {name=x9}
+C {devices/lab_wire.sym} -1100 690 0 0 {name=p41 sig_type=std_logic lab=bias_0v8}
+C {devices/lab_wire.sym} -1120 870 0 1 {name=p42 sig_type=std_logic lab=agnd}
+C {devices/vsource.sym} -1360 -300 0 0 {name=Vsrc_bias_0v8 value=0.8 savecurrent=false}
+C {devices/lab_wire.sym} -1360 -240 0 0 {name=p43 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1360 -360 0 0 {name=p44 sig_type=std_logic lab=bias_0v8}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -1150 170 1 0 {name=C5 model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
+C {devices/lab_wire.sym} -1020 170 0 0 {name=Vsrc_stim22 sig_type=std_logic lab=amp_in_00}
+C {devices/lab_wire.sym} -660 170 0 0 {name=Vsrc_stim23 sig_type=std_logic lab=stim}
+C {sky130_fd_pr/res_high_po_0p35.sym} -560 70 0 0 {name=R5
+L=10
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {devices/lab_wire.sym} -580 70 0 0 {name=p47 sig_type=std_logic lab=agnd}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -590 170 1 0 {name=C1 model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
+C {devices/lab_wire.sym} -460 170 0 0 {name=Vsrc_stim24 sig_type=std_logic lab=amp_in_03}
+C {devices/lab_wire.sym} -560 40 0 0 {name=p48 sig_type=std_logic lab=bias_0v8}
+C {devices/lab_wire.sym} -700 430 0 0 {name=Vsrc_stim12 sig_type=std_logic lab=stim}
+C {sky130_fd_pr/res_high_po_0p35.sym} -600 330 0 0 {name=R6
+L=10
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {devices/lab_wire.sym} -620 330 0 0 {name=p49 sig_type=std_logic lab=agnd}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -630 430 1 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
+C {devices/lab_wire.sym} -500 430 0 0 {name=Vsrc_stim25 sig_type=std_logic lab=amp_in_02}
+C {devices/lab_wire.sym} -600 300 0 0 {name=p50 sig_type=std_logic lab=bias_0v8}
+C {devices/lab_wire.sym} -1220 430 0 0 {name=Vsrc_stim9 sig_type=std_logic lab=stim}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -1150 430 1 0 {name=C3 model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
+C {devices/lab_wire.sym} -1020 430 0 0 {name=Vsrc_stim15 sig_type=std_logic lab=amp_in_01}
+C {sky130_fd_pr/pfet_01v8.sym} -400 650 0 0 {name=M10
+L=0.15
+W=5
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -380 600 0 1 {name=p23 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -380 800 0 1 {name=p24 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -380 700 0 1 {name=Vsrc_stim6 sig_type=std_logic lab=amp_out_05}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -400 750 0 0 {name=M9
+L=0.15
+W=15
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -639,10 +713,62 @@ sa=0 sb=0 sd=0
 model=nfet_01v8_lvt
 spiceprefix=X
 }
-C {devices/lab_wire.sym} -640 730 0 1 {name=p40 sig_type=std_logic lab=agnd}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP_Old/CPL_CM.sym} -1020 790 0 0 {name=x9}
-C {devices/lab_wire.sym} -1100 670 0 0 {name=p41 sig_type=std_logic lab=bias_0v8}
-C {devices/lab_wire.sym} -1120 850 0 1 {name=p42 sig_type=std_logic lab=agnd}
-C {devices/vsource.sym} -1360 -300 0 0 {name=Vsrc_bias_0v8 value=0.8 savecurrent=false}
-C {devices/lab_wire.sym} -1360 -240 0 0 {name=p43 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -1360 -360 0 0 {name=p44 sig_type=std_logic lab=bias_0v8}
+C {devices/lab_wire.sym} -500 750 0 0 {name=Vsrc_stim20 sig_type=std_logic lab=amp_in_05}
+C {sky130_fd_pr/nfet_01v8.sym} -400 430 0 0 {name=M5
+L=0.15
+W=5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} -960 670 0 0 {name=M8
+L=0.15
+W=15
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CM_Injector_0v8.sym} -1200 300 0 0 {name=x1}
+C {devices/lab_wire.sym} -1300 380 0 0 {name=p27 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1300 240 0 0 {name=p28 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -1260 240 0 0 {name=p29 sig_type=std_logic lab=ibias}
+C {devices/lab_wire.sym} -1460 180 0 0 {name=p33 sig_type=std_logic lab=ibias}
+C {sky130_fd_pr/nfet_01v8.sym} -1440 230 0 1 {name=M11
+L=0.5
+W=4
+nf=4 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -1460 280 0 0 {name=p37 sig_type=std_logic lab=agnd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CM_Injector_0v8.sym} -1120 20 0 0 {name=x2}
+C {devices/lab_wire.sym} -1220 100 0 0 {name=p15 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -1220 -40 0 0 {name=p21 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -1180 -40 0 0 {name=p22 sig_type=std_logic lab=ibias}
+C {devices/lab_wire.sym} -700 750 0 0 {name=Vsrc_stim16 sig_type=std_logic lab=stim}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -630 750 1 0 {name=C4 model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/CM_Injector_0v8.sym} -600 620 0 0 {name=x3}
+C {devices/lab_wire.sym} -700 700 0 0 {name=p25 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -700 560 0 0 {name=p26 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -660 560 0 0 {name=p40 sig_type=std_logic lab=ibias}

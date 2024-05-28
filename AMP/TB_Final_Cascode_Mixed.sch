@@ -17,9 +17,8 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5"
-node="gain
-gain_lvt"
+color=4
+node=gain
 sweep=frequency
 
 
@@ -30,8 +29,8 @@ y2=100
 
 unitx=1
 y1=00
-x1=-0.54999998
-x2=10.45}
+x1=2.3026984e-08
+x2=11}
 B 2 -970 20 -540 340 {flags=graph
 
 
@@ -44,9 +43,8 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5"
-node="ratio
-ratio_lvt"
+color=4
+node=ratio
 sweep=frequency
 
 
@@ -57,8 +55,8 @@ logy=1
 
 unitx=1
 y1=-3
-x1=-0.54999998
-x2=10.45
+x1=2.3026984e-08
+x2=11
 y2=3}
 N -320 -160 -320 -120 {
 lab=agnd}
@@ -98,22 +96,6 @@ N -540 -120 -540 -100 {
 lab=vinp}
 N -340 40 -340 60 {
 lab=ibias_n_50u}
-N -250 400 -200 400 {
-lab=voutn_lvt}
-N -250 360 -200 360 {
-lab=voutp_lvt}
-N -140 410 -140 430 {
-lab=agnd}
-N -80 410 -80 430 {
-lab=agnd}
-N -140 330 -140 350 {
-lab=voutp_lvt}
-N -80 330 -80 350 {
-lab=voutn_lvt}
-N -140 430 -80 430 {
-lab=agnd}
-N -340 280 -340 300 {
-lab=ibias_n_50u}
 C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
 only_toplevel=true
 value=
@@ -130,11 +112,10 @@ op
 * Print newline
 echo
 
-* Store lists of device names
-set nmos_list = ( x1.xm1 x1.xm2 x1.xm3 x1.xm4 x1.xm9 x1.xm10 )
-set pmos_list = ( x1.xm5 x1.xm6 x1.xm7 x1.xm8 )
-set nmos_lvt_list = ( x2.xm1 x2.xm2 x2.xm3 x2.xm4 x2.xm9 x2.xm10 )
-set pmos_lvt_list = ( x2.xm5 x2.xm6 x2.xm7 x2.xm8 )
+set nmos_list = ( x1.xm1 x1.xm2 x1.xm9 x1.xm10 )
+set pmos_list = ( x1.xm7 x1.xm8 )
+set nmos_lvt_list = ( x1.xm3 x1.xm4 )
+set pmos_lvt_list = ( x1.xm5 x1.xm6 )
 
 * Print stats for each MOSFET
 foreach nmos $nmos_list
@@ -337,7 +318,7 @@ end
 echo
 
 * Sweep frequency
-write TB_Final_Cascode.raw
+write TB_Final_Cascode_Mixed.raw
 set appendwrite
 ac dec 100 1 1e11
 remzerovec
@@ -348,15 +329,10 @@ let vin_diff = v(vinp)- v(vinn)
 let gain = db(mag(vout_diff/vin_diff))
 let ratio = (vout_diff/vin_diff)
 
-let vout_diff_lvt = v(voutp_lvt)- v(voutn_lvt)
-let gain_lvt = db(mag(vout_diff_lvt/vin_diff))
-let ratio_lvt = (vout_diff_lvt/vin_diff)
-
-write TB_Final_Cascode.raw
+write TB_Final_Cascode_Mixed.raw
 
 .endc
 " }
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode.sym} -320 140 0 0 {name=x1}
 C {devices/vsource.sym} -320 -90 0 0 {name=Vsrc_agnd value=0 savecurrent=false}
 C {devices/vsource.sym} -220 -90 0 0 {name=Vsrc_avdd value=1.8 savecurrent=false}
 C {devices/gnd.sym} -320 -20 0 0 {name=l1 lab=GND}
@@ -398,25 +374,4 @@ C {devices/lab_wire.sym} -360 50 0 0 {name=p13 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} -360 230 0 1 {name=p14 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -340 40 0 1 {name=p15 sig_type=std_logic lab=ibias_n_50u
 }
-C {devices/lab_wire.sym} -200 360 0 0 {name=p16 sig_type=std_logic lab=voutp_lvt}
-C {devices/lab_wire.sym} -200 400 0 0 {name=p17 sig_type=std_logic lab=voutn_lvt}
-C {devices/capa.sym} -80 380 0 0 {name=C1
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/capa.sym} -140 380 0 0 {name=C2
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -80 330 0 0 {name=p21 sig_type=std_logic lab=voutn_lvt}
-C {devices/lab_wire.sym} -140 330 0 0 {name=p22 sig_type=std_logic lab=voutp_lvt}
-C {devices/lab_wire.sym} -90 430 0 0 {name=p23 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -400 360 0 0 {name=p24 sig_type=std_logic lab=vinn}
-C {devices/lab_wire.sym} -400 400 0 0 {name=p25 sig_type=std_logic lab=vinp}
-C {devices/lab_wire.sym} -360 290 0 0 {name=p26 sig_type=std_logic lab=avdd}
-C {devices/lab_wire.sym} -360 470 0 1 {name=p27 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -340 280 0 1 {name=p28 sig_type=std_logic lab=ibias_n_50u
-}
-C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_LVT.sym} -320 380 0 0 {name=x2}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_Mixed.sym} -320 140 0 0 {name=x1}
