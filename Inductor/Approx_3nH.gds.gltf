@@ -1,0 +1,432 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "normalized": false,
+      "count": 684,
+      "type": "SCALAR",
+      "max": [
+        151
+      ],
+      "min": [
+        0
+      ]
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 152,
+      "type": "VEC3",
+      "max": [
+        230.9699938271217,
+        230.96999707106787,
+        6.6311
+      ],
+      "min": [
+        -230.9699938271217,
+        -230.9699938271217,
+        5.371
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "pygltflib@v1.16.2",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 2736,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2736,
+      "byteLength": 1824,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "data:application/octet-stream;base64,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ZQAAAGQAAABgAAAAZAAAAGcAAABjAAAAYgAAAGMAAABnAAAAYQAAAGIAAABmAAAAYAAAAGEAAABlAAAAYwAAAGAAAABkAAAAaQAAAGgAAABrAAAAawAAAGoAAABpAAAAbwAAAGwAAABtAAAAbQAAAG4AAABvAAAAbwAAAG4AAABqAAAAbgAAAG0AAABpAAAAbQAAAGwAAABoAAAAbAAAAG8AAABrAAAAagAAAGsAAABvAAAAaQAAAGoAAABuAAAAaAAAAGkAAABtAAAAawAAAGgAAABsAAAAcgAAAHEAAABwAAAAcAAAAHMAAAByAAAAdAAAAHUAAAB2AAAAdgAAAHcAAAB0AAAAdwAAAHYAAAByAAAAdgAAAHUAAABxAAAAdQAAAHQAAABwAAAAdAAAAHcAAABzAAAAcgAAAHMAAAB3AAAAcQAAAHIAAAB2AAAAcAAAAHEAAAB1AAAAcwAAAHAAAAB0AAAAeQAAAHgAAAB7AAAAewAAAHoAAAB5AAAAfwAAAHwAAAB9AAAAfQAAAH4AAAB/AAAAfwAAAH4AAAB6AAAAfgAAAH0AAAB5AAAAfQAAAHwAAAB4AAAAfAAAAH8AAAB7AAAAegAAAHsAAAB/AAAAeQAAAHoAAAB+AAAAeAAAAHkAAAB9AAAAewAAAHgAAAB8AAAAgQAAAIAAAACDAAAAgwAAAIIAAACBAAAAhwAAAIQAAACFAAAAhQAAAIYAAACHAAAAhwAAAIYAAACCAAAAhgAAAIUAAACBAAAAhQAAAIQAAACAAAAAhAAAAIcAAACDAAAAggAAAIMAAACHAAAAgQAAAIIAAACGAAAAgAAAAIEAAACFAAAAgwAAAIAAAACEAAAAigAAAIkAAACIAAAAiAAAAIsAAACKAAAAjAAAAI0AAACOAAAAjgAAAI8AAACMAAAAjwAAAI4AAACKAAAAjgAAAI0AAACJAAAAjQAAAIwAAACIAAAAjAAAAI8AAACLAAAAigAAAIsAAACPAAAAiQAAAIoAAACOAAAAiAAAAIkAAACNAAAAiwAAAIgAAACMAAAAkgAAAJEAAACQAAAAkAAAAJMAAACSAAAAlAAAAJUAAACWAAAAlgAAAJcAAACUAAAAlwAAAJYAAACSAAAAlgAAAJUAAACRAAAAlQAAAJQAAACQAAAAlAAAAJcAAACTAAAAkgAAAJMAAACXAAAAkQAAAJIAAACWAAAAkAAAAJEAAACVAAAAkwAAAJAAAACUAAAAWo97wlL4L0P5MdRA0nr8wFH4ZkP5MdRA8iijQVL4ZkP5MdRAh2sKwlP4L0P5MdRAWo97wlL4L0M736tA0nr8wFH4ZkM736tA8iijQVL4ZkM736tAh2sKwlP4L0M736tAHsWuwlP4UkP5MdRACVe/wlL4ZkP5MdRA0czowVL4ZkP5MdRAaGZEwlP4UkP5MdRAHsWuwlP4UkM736tACVe/wlL4ZkM736tA0czowVL4ZkM736tAaGZEwlP4UkM736tAtR7fwVL4UkP5MdRA0nr8wFH4ZkP5MdRACVe/QlL4ZkP5MdRAHsWuQlP4UkP5MdRAtR7fwVL4UkM736tA0nr8wFH4ZkM736tACVe/QlL4ZkM736tAHsWuQlP4UkM736tAUvhSwyHFrkL5MdRAUfhmwwtXv0L5MdRAC1e/wlH4ZkP5MdRAIcWuwlL4UkP5MdRAUvhSwyHFrkI736tAUfhmwwtXv0I736tAC1e/wlH4ZkM736tAIcWuwlL4UkM736tAUvhmwwlXv8L5MdRAUvhmwwlXv0L5MdRAU/hSwx7FrkL5MdRAU/hSwx7FrsL5MdRAUvhmwwlXv8I736tAUvhmwwlXv0I736tAU/hSwx7FrkI736tAU/hSwx7FrsI736tAC1e/wlH4ZsP5MdRAUfhmwwtXv8L5MdRAUvhSwyHFrsL5MdRAIcWuwlL4UsP5MdRAC1e/wlH4ZsM736tAUfhmwwtXv8I736tAUvhSwyHFrsI736tAIcWuwlL4UsM736tACVe/wlL4ZsP5MdRAHsWuwlP4UsP5MdRAHsWuQlP4UsP5MdRACVe/QlL4ZsP5MdRACVe/wlL4ZsM736tAHsWuwlP4UsM736tAHsWuQlP4UsM736tACVe/QlL4ZsM736tAC1e/QlH4ZsP5MdRAIcWuQlL4UsP5MdRAUvhSQyHFrsL5MdRAUfhmQwtXv8L5MdRAC1e/QlH4ZsM736tAIcWuQlL4UsM736tAUvhSQyHFrsI736tAUfhmQwtXv8I736tAUvhmQwlXv8L5MdRAU/hSQx7FrsL5MdRAU/hSQx7FrkL5MdRAUvhmQwlXv0L5MdRAUvhmQwlXv8I736tAU/hSQx7FrsI736tAU/hSQx7FrkI736tAUvhmQwlXv0I736tAUvhSQyHFrkL5MdRAIcWuQlL4UkP5MdRAC1e/QlH4ZkP5MdRAUfhmQwtXv0L5MdRAUvhSQyHFrkI736tAIcWuQlL4UkM736tAC1e/QlH4ZkM736tAUfhmQwtXv0I736tArceRwlP4L0P5MdRAmFmiwlL4Q0P5MdRAHK5pwVL4Q0P5MdRAh2sKwlP4L0P5MdRArceRwlP4L0M736tAmFmiwlL4Q0M736tAHK5pwVL4Q0M736tAh2sKwlP4L0M736tAaT1WwVL4L0P5MdRALoXTQFH4Q0P5MdRAmFmiQlL4Q0P5MdRArceRQlP4L0P5MdRAaT1WwVL4L0M736tALoXTQFH4Q0M736tAmFmiQlL4Q0M736tArceRQlP4L0M736tAUvgvw7DHkUL5MdRAUfhDw5pZokL5MdRAmlmiwlH4Q0P5MdRAsMeRwlL4L0P5MdRAUvgvw7DHkUI736tAUfhDw5pZokI736tAmlmiwlH4Q0M736tAsMeRwlL4L0M736tAUvhDw5hZosL5MdRAUvhDw5hZokL5MdRAU/gvw63HkUL5MdRAU/gvw63HkcL5MdRAUvhDw5hZosI736tAUvhDw5hZokI736tAU/gvw63HkUI736tAU/gvw63HkcI736tAmlmiwlH4Q8P5MdRAUfhDw5pZosL5MdRAUvgvw7DHkcL5MdRAsMeRwlL4L8P5MdRAmlmiwlH4Q8M736tAUfhDw5pZosI736tAUvgvw7DHkcI736tAsMeRwlL4L8M736tAmFmiwlL4Q8P5MdRArceRwlP4L8P5MdRArceRQlP4L8P5MdRAmFmiQlL4Q8P5MdRAmFmiwlL4Q8M736tArceRwlP4L8M736tArceRQlP4L8M736tAmFmiQlL4Q8M736tAmlmiQlH4Q8P5MdRAsMeRQlL4L8P5MdRAUvgvQ7DHkcL5MdRAUfhDQ5pZosL5MdRAmlmiQlH4Q8M736tAsMeRQlL4L8M736tAUvgvQ7DHkcI736tAUfhDQ5pZosI736tAUvhDQ5hZosL5MdRAU/gvQ63HkcL5MdRAU/gvQ63HkUL5MdRAUvhDQ5hZokL5MdRAUvhDQ5hZosI736tAU/gvQ63HkcI736tAU/gvQ63HkUI736tAUvhDQ5hZokI736tAUvgvQ7DHkUL5MdRAsMeRQlL4L0P5MdRAmlmiQlH4Q0P5MdRAUfhDQ5pZokL5MdRAUvgvQ7DHkUI736tAsMeRQlL4L0M736tAmlmiQlH4Q0M736tAUfhDQ5pZokI736tA",
+      "byteLength": 4560
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "substrate"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4,
+          0.4,
+          0.4,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "nwell"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.9,
+          0.9,
+          0.9,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "diff"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.75,
+          0.35,
+          0.46,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "poly"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "licon"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.81,
+          0.55,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "li1"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "mcon"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.16,
+          0.38,
+          0.83,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "met1"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "via"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.65,
+          0.75,
+          0.9,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "met2"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "via2"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.62,
+          0.86,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "met3"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "via3"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.15,
+          0.11,
+          0.38,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "met4"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "via4"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4,
+          0.4,
+          0.4,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "alphaMode": "OPAQUE",
+      "alphaCutoff": 0.5,
+      "doubleSided": false,
+      "name": "met5"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1
+          },
+          "indices": 0,
+          "mode": 4,
+          "material": 15
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "Approx_3nH"
+    },
+    {
+      "mesh": 0,
+      "name": "Approx_3nH_met5"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
