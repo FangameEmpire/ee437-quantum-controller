@@ -17,8 +17,9 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5"
+color="4 5 6"
 node="gain_sch
+gain_mod
 gain_gds"
 sweep=frequency
 
@@ -44,8 +45,9 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5"
+color="4 5 6"
 node="ratio_sch
+ratio_mod
 ratio_gds"
 sweep=frequency
 
@@ -72,7 +74,7 @@ N -120 -60 -120 -20 {
 lab=ibias_n_50u}
 N -120 -160 -120 -120 {
 lab=avdd}
-N -140 200 -140 220 {
+N -140 220 -140 240 {
 lab=agnd}
 N -540 -40 -540 -20 {
 lab=agnd}
@@ -87,7 +89,22 @@ lab=#net2}
 N -360 40 -360 60 {
 lab=ibias_n_50u}
 N -220 140 -140 140 {
-lab=vout_00}
+lab=vout_sch}
+N -360 280 -360 300 {
+lab=ibias_n_50u}
+N -360 520 -360 540 {
+lab=ibias_n_50u}
+N -140 460 -140 480 {
+lab=agnd}
+N -220 380 -140 380 {
+lab=vout_mod}
+N -140 700 -140 720 {
+lab=agnd}
+N -220 620 -140 620 {
+lab=vout_gds}
+N -140 140 -140 160 {}
+N -140 620 -140 640 {}
+N -140 380 -140 400 {}
 C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
 only_toplevel=true
 value=
@@ -318,13 +335,17 @@ remzerovec
 * Calculate gain
 let vin_diff = v(vinp) - v(vinn)
 
-let vout_00 = v(vout_00)
-let gain_sch = db(mag(vout_00/vin_diff))
-let ratio_sch = (vout_00/vin_diff)
+let vout_sch = v(vout_sch)
+let gain_sch = db(mag(vout_sch/vin_diff))
+let ratio_sch = (vout_sch/vin_diff)
 
-*let vout_01 = v(vout_01)
-*let gain_gds = db(mag(vout_01/vin_diff))
-*let ratio_gds = (vout_01/vin_diff)
+let vout_mod = v(vout_mod)
+let gain_mod = db(mag(vout_mod/vin_diff))
+let ratio_mod = (vout_mod/vin_diff)
+
+let vout_gds = v(vout_gds)
+let gain_gds = db(mag(vout_gds/vin_diff))
+let ratio_gds = (vout_gds/vin_diff)
 
 write TB_Final_Cascode_Mixed.raw
 
@@ -345,13 +366,8 @@ descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {sky130_fd_pr/corner.sym} 20 -190 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {devices/lab_wire.sym} -140 140 0 0 {name=p1 sig_type=std_logic lab=vout_00}
-C {devices/capa.sym} -140 170 0 0 {name=C4
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_wire.sym} -140 220 0 0 {name=p20 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -140 140 0 0 {name=p1 sig_type=std_logic lab=vout_sch}
+C {devices/lab_wire.sym} -140 240 0 0 {name=p20 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -540 -180 0 0 {name=p2 sig_type=std_logic lab=vinp}
 C {devices/lab_wire.sym} -440 -180 0 0 {name=p5 sig_type=std_logic lab=vinn}
 C {devices/vsource.sym} -540 -70 0 0 {name=V1 value="0.05 AC 0.5 0" savecurrent=false}
@@ -366,3 +382,36 @@ C {devices/lab_wire.sym} -360 40 0 1 {name=p15 sig_type=std_logic lab=ibias_n_50
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_Mixed.sym} -320 140 0 0 {name=x1}
 C {devices/vsource.sym} -540 -150 0 0 {name=V3 value=1 savecurrent=false}
 C {devices/vsource.sym} -440 -150 0 0 {name=V4 value=1 savecurrent=false}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Final_Amp.sym} -320 620 0 0 {name=x3}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Modules_Amp.sym} -320 380 0 0 {name=x2}
+C {devices/lab_wire.sym} -460 360 0 0 {name=p6 sig_type=std_logic lab=vinn}
+C {devices/lab_wire.sym} -460 400 0 0 {name=p16 sig_type=std_logic lab=vinp}
+C {devices/lab_wire.sym} -460 600 0 0 {name=p17 sig_type=std_logic lab=vinn}
+C {devices/lab_wire.sym} -460 640 0 0 {name=p18 sig_type=std_logic lab=vinp}
+C {devices/lab_wire.sym} -400 280 0 0 {name=p19 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 480 0 1 {name=p21 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -360 280 0 1 {name=p22 sig_type=std_logic lab=ibias_n_50u
+}
+C {devices/lab_wire.sym} -400 520 0 0 {name=p23 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 720 0 1 {name=p24 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -360 520 0 1 {name=p25 sig_type=std_logic lab=ibias_n_50u
+}
+C {devices/lab_wire.sym} -140 380 0 0 {name=p26 sig_type=std_logic lab=vout_mod}
+C {devices/capa.sym} -140 190 0 0 {name=C1
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_wire.sym} -140 480 0 0 {name=p27 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -140 620 0 0 {name=p28 sig_type=std_logic lab=vout_gds}
+C {devices/capa.sym} -140 430 0 0 {name=C2
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_wire.sym} -140 720 0 0 {name=p29 sig_type=std_logic lab=agnd}
+C {devices/capa.sym} -140 670 0 0 {name=C3
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
