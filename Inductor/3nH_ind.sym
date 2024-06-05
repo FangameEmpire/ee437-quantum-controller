@@ -1,0 +1,113 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=primative
+format="@name @pinlist @symname"
+template="name=x1"}
+V {}
+S {type=netlist_commands
+format="@name @pinlist @symname"
+value="
+.subckt ROMequiv20thorder_enrique3nh p0 m0
+* The coefficient of x is the identity == 1 ohm resistors to ground.
+RH_0_0 state0 0 1
+RH_1_1 state1 0 1
+RH_2_2 state2 0 1
+RH_3_3 state3 0 1
+RH_4_4 state4 0 1
+RH_5_5 state5 0 1
+RH_6_6 state6 0 1
+RH_7_7 state7 0 1
+RH_8_8 state8 0 1
+RH_9_9 state9 0 1
+RH_10_10 state10 0 1
+RH_11_11 state11 0 1
+RH_12_12 state12 0 1
+RH_13_13 state13 0 1
+RH_14_14 state14 0 1
+RH_15_15 state15 0 1
+RH_16_16 state16 0 1
+RH_17_17 state17 0 1
+RH_18_18 state18 0 1
+RH_19_19 state19 0 1
+
+* The B matrix. VCCS dependent on port voltages
+GB_0_0  state0 0 p0 m0       -0.507681
+* The C matrix. VCCS dependent on state variable
+GC_0_0   p0 m0 state0 0        0.507681
+GC_1_0   p0 m0 state1 0    -1.86374e-14
+GC_2_0   p0 m0 state2 0     -4.7956e-14
+GC_3_0   p0 m0 state3 0     0.000214951
+GC_4_0   p0 m0 state4 0      -0.0107403
+GC_5_0   p0 m0 state5 0        0.184379
+GC_6_0   p0 m0 state6 0       -0.471645
+GC_7_0   p0 m0 state7 0       0.0261009
+GC_8_0   p0 m0 state8 0     -0.00113256
+GC_9_0   p0 m0 state9 0     0.000810294
+GC_10_0   p0 m0 state10 0       -0.022661
+GC_11_0   p0 m0 state11 0        0.461033
+GC_12_0   p0 m0 state12 0       -0.210039
+GC_13_0   p0 m0 state13 0      0.00776137
+GC_14_0   p0 m0 state14 0    -0.000247503
+GC_15_0   p0 m0 state15 0     -0.00532128
+GC_16_0   p0 m0 state16 0        0.105449
+GC_17_0   p0 m0 state17 0       -0.494191
+GC_18_0   p0 m0 state18 0       0.0432095
+GC_19_0   p0 m0 state19 0     -0.00160932
+* The A matrix.  Coefficient of dx/dt.  constructed from capacitors. A = A^t
+CA_0_0 state0 0    7.39888e-10 ic=0
+CA_1_0 state1 state0    3.06668e-11 ic=0
+CA_1_1 state1 0    1.41742e-11 ic=0
+CA_2_1 state2 state1    2.82361e-11 ic=0
+CA_2_2 state2 0    1.69152e-11 ic=0
+CA_3_2 state3 state2    2.11148e-11 ic=0
+CA_3_3 state3 0    -3.6576e-12 ic=0
+CA_4_3 state4 state3    1.40191e-11 ic=0
+CA_4_4 state4 0   -7.69948e-12 ic=0
+CA_5_4 state5 state4    4.21184e-11 ic=0
+CA_5_5 state5 0   -1.42236e-10 ic=0
+CA_6_5 state6 state5    2.44426e-10 ic=0
+CA_6_6 state6 0    3.89741e-10 ic=0
+CA_7_6 state7 state6    4.00264e-11 ic=0
+CA_7_7 state7 0   -2.31732e-11 ic=0
+CA_8_7 state8 state7    3.06044e-11 ic=0
+CA_8_8 state8 0    1.75167e-11 ic=0
+CA_9_8 state9 state8    1.49967e-11 ic=0
+CA_9_9 state9 0   -9.05481e-12 ic=0
+CA_10_9 state10 state9    2.61198e-11 ic=0
+CA_10_10 state10 0    2.22895e-11 ic=0
+CA_11_10 state11 state10    3.38655e-11 ic=0
+CA_11_11 state11 0    3.39802e-10 ic=0
+CA_12_11 state12 state11    2.72509e-10 ic=0
+CA_12_12 state12 0   -1.26556e-10 ic=0
+CA_13_12 state13 state12    2.67948e-11 ic=0
+CA_13_13 state13 0   -1.73425e-11 ic=0
+CA_14_13 state14 state13    3.34964e-11 ic=0
+CA_14_14 state14 0    1.92247e-12 ic=0
+CA_15_14 state15 state14    1.65263e-11 ic=0
+CA_15_15 state15 0   -8.16599e-12 ic=0
+CA_16_15 state16 state15    3.67311e-11 ic=0
+CA_16_16 state16 0   -9.39853e-11 ic=0
+CA_17_16 state17 state16    1.45519e-10 ic=0
+CA_17_17 state17 0    5.28725e-10 ic=0
+CA_18_17 state18 state17    6.12866e-11 ic=0
+CA_18_18 state18 0   -1.84807e-11 ic=0
+CA_19_18 state19 state18    2.68136e-11 ic=0
+CA_19_19 state19 0    2.95342e-11 ic=0
+.ends ROMequiv20thorder_enrique3nh
+"}
+E {}
+L 4 70 -110 70 -50 {}
+L 4 70 -110 90 -110 {}
+L 4 90 -110 90 -50 {}
+L 4 70 -50 90 -50 {}
+L 4 80 -130 80 -110 {}
+L 4 80 -50 80 -30 {}
+B 5 77.5 -132.5 82.5 -127.5 {name=p0 dir=inout
+sim_pinnumber=0}
+B 5 77.5 -32.5 82.5 -27.5 {name=m0 dir=inout
+sim_pinnumber=1}
+T {p0} 84 -105 1 0 0.2 0.2 {}
+T {m0} 84 -55 1 1 0.2 0.2 {}
+T {@name} 95 -112 0 0 0.2 0.2 {}
+T {@symname} 95 -92 0 0 0.2 0.2 {}
