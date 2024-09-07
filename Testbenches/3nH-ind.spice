@@ -1,0 +1,22 @@
+* Equivalent circuit for state-space model from analysis of FastHenry file:
+* * FastHenry input file created using FreeCAD's ElectroMagnetic Workbench
+
+* Fasthenry generates  A dx/dt = x + B Vin,  Iout = C^t x + D Vin
+* Note that regardless of what the original system modeled (say inductance),
+* this file will use only R's, C's, and VCCS's to represent the system
+* This is a 1-port model with the port nodes listed pairwise
+* Correspondence to FastHenry nodes:
+*   Port 0:  nfhnode017  to  nfhnode
+* pn mn is a plus/minus port pair of nodes, where n is the port number
+
+.subckt ROMequiv  p0 m0
+* The coefficient of x is the identity == 1 ohm resistors to ground.
+RH_0_0 state0 0 1
+
+* The B matrix. VCCS dependent on port voltages
+GB_0_0  state0 0 p0 m0       -0.749694
+* The C matrix. VCCS dependent on state variable
+GC_0_0   p0 m0 state0 0        0.749694
+* The A matrix.  Coefficient of dx/dt.  constructed from capacitors. A = A^t
+CA_0_0 state0 0     1.6443e-09 ic=0
+.ends ROMequiv
