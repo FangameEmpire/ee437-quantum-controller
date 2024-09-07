@@ -17,14 +17,13 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6 7 8 9 10"
-node="gain_00
-gain_01
-gain_02
-gain_03
-gain_04
-gain_05
-gain_06"
+color="4 5 6 7 8 9"
+node="\\"re(gain_00); gain_00 ph(gain_00) re()\\"
+\\"re(gain_01); gain_01 ph(gain_01) re()\\"
+\\"re(gain_02); gain_02 ph(gain_02) re()\\"
+\\"re(gain_03); gain_03 ph(gain_03) re()\\"
+\\"re(gain_04); gain_04 ph(gain_04) re()\\"
+\\"re(gain_05); gain_05 ph(gain_05) re()\\""
 sweep=frequency
 
 

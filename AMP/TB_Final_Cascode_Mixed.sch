@@ -18,9 +18,9 @@ subdivx=8
  unity=1
 dataset=-1
 color="4 5 6"
-node="gain_sch
-gain_mod
-gain_gds"
+node="\\"re(gain_sch); gain_sch ph(gain_sch) re()\\"
+\\"re(gain_mod); gain_mod ph(gain_mod) re()\\"
+\\"re(gain_gds); gain_gds ph(gain_gds) re()\\""
 sweep=frequency
 
 

@@ -324,10 +324,7 @@ C {devices/lab_pin.sym} 470 -350 0 0 {name=p27 sig_type=std_logic lab=agnd}
 C {devices/lab_pin.sym} 340 -700 0 0 {name=p40 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 340 -560 2 0 {name=p43 sig_type=std_logic lab=l_d1}
 C {devices/lab_pin.sym} 480 -560 2 0 {name=p44 sig_type=std_logic lab=lna_out}
-C {/foss/designs/EE437/LNA/LNA_Mixer.sym} 800 -440 0 0 {name=x1}
 C {devices/lab_pin.sym} 640 -440 0 0 {name=p12 sig_type=std_logic lab=ibias_n_50u}
-C {/foss/designs/EE437/LNA/3nH_ind.sym} 420 -710 2 0 {name=x2}
-C {/foss/designs/EE437/LNA/3nH_ind.sym} 560 -710 2 0 {name=x3}
 C {devices/lab_pin.sym} 620 -580 0 0 {name=p23 sig_type=std_logic lab=agnd}
 C {devices/lab_pin.sym} 640 -500 0 0 {name=p26 sig_type=std_logic lab=clk_I}
 C {devices/lab_pin.sym} 640 -480 0 0 {name=p28 sig_type=std_logic lab=clk_Q}
@@ -338,3 +335,6 @@ C {devices/lab_pin.sym} 720 -560 1 0 {name=p41 sig_type=std_logic lab=l_d1}
 C {devices/lab_pin.sym} 620 -680 0 0 {name=p42 sig_type=std_logic lab=l_s}
 C {devices/lab_pin.sym} 800 -560 1 0 {name=p45 sig_type=std_logic lab=l_s}
 C {devices/lab_pin.sym} 690 -60 0 0 {name=p36 sig_type=std_logic lab=ibias_n_50u}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/Testbenches/LNA_Mixer.sym} 800 -440 0 0 {name=x1}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/Inductor/3nH_ind.sym} 260 -550 0 0 {name=x2}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/Inductor/3nH_ind.sym} 400 -550 0 0 {name=x3}
