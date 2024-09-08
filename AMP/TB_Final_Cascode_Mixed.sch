@@ -62,6 +62,63 @@ y1=-3
 x1=0
 x2=11
 y2=3}
+B 2 -1430 360 -1000 680 {flags=graph
+
+
+divy = 5
+subdivy=4
+
+
+divx=4
+subdivx=8
+
+ unity=1
+dataset=-1
+color="4 5 6"
+node="\\"re(gain_sch); gain_sch ph(gain_sch) re()\\"
+\\"re(gain_mod); gain_mod ph(gain_mod) re()\\"
+\\"re(gain_gds); gain_gds ph(gain_gds) re()\\""
+sweep=frequency
+
+
+logx=1
+
+logy=0
+y2=100
+
+unitx=1
+y1=-100
+x1=0
+x2=11}
+B 2 -1430 20 -1000 340 {flags=graph
+
+
+divy = 5
+subdivy=4
+
+
+divx=4
+subdivx=8
+
+ unity=1
+dataset=-1
+color="4 5 6"
+node="ratio_sch
+ratio_mod
+ratio_gds"
+sweep=frequency
+
+
+logx=1
+
+logy=0
+
+
+unitx=1
+y1=-2
+x1=0
+x2=11
+y2=2}
 N -320 -160 -320 -120 {
 lab=agnd}
 N -320 -60 -320 -20 {

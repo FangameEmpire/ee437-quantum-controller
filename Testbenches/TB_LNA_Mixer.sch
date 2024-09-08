@@ -188,8 +188,8 @@ C {devices/lab_pin.sym} 270 -360 0 0 {name=p7 sig_type=std_logic lab=agnd}
 C {devices/code_shown.sym} 20 40 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-.include /foss/designs/EE437/LNA/3nH_ind.spice
-.include /foss/designs/EE437/LNA/LNA_Mixer.pex.spice
+.include /foss/designs/EE437/Project/ee437-quantum-controller/LNA/3nH_ind.spice
+.include /foss/designs/EE437/Project/ee437-quantum-controller/LNA/LNA_Mixer.pex.spice
 
 .option savecurrents
 

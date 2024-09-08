@@ -1,7 +1,7 @@
-* PEX produced on Wed Jun  5 03:54:00 PM CEST 2024 using /foss/tools/osic-multitool/iic-pex.sh with m=2 and s=1
+* PEX produced on Sun Sep  8 03:19:59 AM CEST 2024 using /foss/tools/osic-multitool/iic-pex.sh with m=2 and s=1
 * NGSPICE file created from Hard_Cascode.ext - technology: sky130A
 
-.subckt Hard_Cascode Vb2 Vb1 avdd vout_int vinn_cm vinp_cm itail agnd
+.subckt Hard_Cascode avdd vinp vout agnd vinn Vb2 Vb1 itail
 X0 a_n4119_680# pgate2 avdd avdd sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
 X1 a_n4119_680# Vb2 pgate2 avdd sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.35
 X2 pgate2 Vb2 a_n4119_680# avdd sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.35
@@ -170,52 +170,52 @@ X164 a_n1104_n2888# Vb1 vout agnd sky130_fd_pr__nfet_01v8_lvt ad=0.3 pd=2.6 as=0
 X165 vout Vb1 a_n1104_n2888# agnd sky130_fd_pr__nfet_01v8_lvt ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
 X166 pgate2 Vb1 a_n2322_n2202# agnd sky130_fd_pr__nfet_01v8_lvt ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
 X167 a_n849_1962# Vb2 vout avdd sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.35
-C0 vinn Vb1 0.0887f
-C1 a_n4119_680# a_n849_1962# 0.149f
-C2 vout a_n1104_n2888# 2.43f
-C3 vout a_n849_1962# 4.51f
-C4 a_n1104_n2888# a_n2322_n2202# 0.328f
-C5 pgate2 Vb1 2.36f
-C6 avdd a_n849_1962# 5.49f
-C7 vinp a_n2322_n2202# 0.575f
-C8 itail Vb1 0.0674f
-C9 Vb2 a_n849_1962# 2.58f
-C10 itail vinn 0.665f
-C11 avdd a_n4119_680# 5.49f
-C12 Vb2 a_n4119_680# 2.53f
-C13 vout avdd 8.95f
-C14 Vb2 vout 4.48f
-C15 a_n1104_n2888# Vb1 1.31f
-C16 a_n1104_n2888# vinn 0.575f
-C17 Vb2 avdd 10.6f
-C18 vinp Vb1 0.0887f
-C19 pgate2 a_n849_1962# 1.43f
-C20 vinp vinn 0.0382f
-C21 a_n4119_680# Vb1 0.0124f
-C22 vout Vb1 1.46f
-C23 Vb1 a_n2322_n2202# 1.34f
-C24 itail a_n1104_n2888# 1.26f
-C25 vout vinn 0.0448f
-C26 vinp pgate2 0.0448f
-C27 pgate2 a_n4119_680# 5.97f
-C28 avdd Vb1 0.068f
-C29 vout pgate2 0.283f
-C30 itail vinp 0.665f
-C31 pgate2 a_n2322_n2202# 2.42f
-C32 Vb2 Vb1 0.17f
-C33 itail a_n2322_n2202# 1.26f
-C34 avdd pgate2 15.6f
-C35 Vb2 pgate2 5.4f
+C0 avdd a_n4119_680# 6.31f
+C1 Vb2 a_n4119_680# 2.53f
+C2 vout avdd 9.29f
+C3 Vb2 vout 4.48f
+C4 a_n1104_n2888# Vb1 1.31f
+C5 a_n1104_n2888# vinn 0.575f
+C6 Vb2 avdd 11.7f
+C7 vinp Vb1 0.0887f
+C8 pgate2 a_n849_1962# 1.43f
+C9 vinp vinn 0.0382f
+C10 a_n4119_680# Vb1 0.0124f
+C11 vout Vb1 1.46f
+C12 Vb1 a_n2322_n2202# 1.34f
+C13 itail a_n1104_n2888# 1.26f
+C14 vout vinn 0.0448f
+C15 vinp pgate2 0.0448f
+C16 pgate2 a_n4119_680# 5.97f
+C17 vout pgate2 0.283f
+C18 avdd Vb1 0.0975f
+C19 itail vinp 0.665f
+C20 pgate2 a_n2322_n2202# 2.42f
+C21 Vb2 Vb1 0.17f
+C22 itail a_n2322_n2202# 1.26f
+C23 avdd pgate2 16.9f
+C24 Vb2 pgate2 5.4f
+C25 vinn Vb1 0.0887f
+C26 a_n4119_680# a_n849_1962# 0.149f
+C27 vout a_n1104_n2888# 2.43f
+C28 vout a_n849_1962# 4.51f
+C29 a_n1104_n2888# a_n2322_n2202# 0.328f
+C30 pgate2 Vb1 2.36f
+C31 avdd a_n849_1962# 6.32f
+C32 vinp a_n2322_n2202# 0.575f
+C33 itail Vb1 0.0674f
+C34 Vb2 a_n849_1962# 2.58f
+C35 itail vinn 0.665f
 C36 itail agnd 5.32f
 C37 vinn agnd 2.19f
 C38 vinp agnd 2.19f
-C39 Vb1 agnd 7f
-C40 vout agnd 3.95f
-C41 Vb2 agnd 6.5f
-C42 avdd agnd 32.5f
-C43 a_n1104_n2888# agnd 4.26f $ **FLOATING
+C39 Vb1 agnd 6.97f
+C40 vout agnd 3.63f
+C41 Vb2 agnd 5.37f
+C42 avdd agnd 63.7f
+C43 a_n1104_n2888# agnd 4.25f $ **FLOATING
 C44 a_n2322_n2202# agnd 4.26f $ **FLOATING
-C45 a_n849_1962# agnd 1.22f $ **FLOATING
-C46 a_n4119_680# agnd 1.22f $ **FLOATING
-C47 pgate2 agnd 6.76f $ **FLOATING
+C45 a_n849_1962# agnd 0.456f $ **FLOATING
+C46 a_n4119_680# agnd 0.463f $ **FLOATING
+C47 pgate2 agnd 5.52f $ **FLOATING
 .ends
