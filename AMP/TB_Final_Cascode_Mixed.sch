@@ -173,6 +173,12 @@ N -360 520 -320 520 {
 lab=#net5}
 N -260 520 -220 520 {
 lab=avdd}
+N -740 -180 -740 -160 {
+lab=avdd}
+N -740 -100 -740 -80 {
+lab=avdd_gated}
+N -740 -160 -740 -130 {
+lab=avdd}
 C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
 only_toplevel=true
 value="
@@ -443,7 +449,7 @@ C {devices/vsource.sym} -440 -70 0 0 {name=V2 value="0.005 AC 0.5 180" savecurre
 C {devices/lab_wire.sym} -470 -20 0 0 {name=p10 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -460 120 0 0 {name=p11 sig_type=std_logic lab=vinn}
 C {devices/lab_wire.sym} -460 160 0 0 {name=p12 sig_type=std_logic lab=vinp}
-C {devices/lab_wire.sym} -400 40 0 0 {name=p13 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 40 0 0 {name=p13 sig_type=std_logic lab=avdd_gated}
 C {devices/lab_wire.sym} -400 240 0 1 {name=p14 sig_type=std_logic lab=agnd}
 C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_Mixed.sym} -320 140 0 0 {name=x1}
 C {devices/vsource.sym} -540 -150 0 0 {name=V3 value=1 savecurrent=false}
@@ -470,3 +476,20 @@ C {devices/isource.sym} -290 280 1 0 {name=Isrc_mod value=50u}
 C {devices/lab_wire.sym} -220 280 0 1 {name=p4 sig_type=std_logic lab=avdd}
 C {devices/isource.sym} -290 520 1 0 {name=Isrc_gds value=50u}
 C {devices/lab_wire.sym} -220 520 0 1 {name=p15 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -740 -180 0 0 {name=p25 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -740 -80 0 0 {name=p30 sig_type=std_logic lab=avdd_gated}
+C {sky130_fd_pr/pfet_01v8.sym} -760 -130 0 0 {name=M1
+L=0.15
+W=100
+nf=50
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/lab_wire.sym} -780 -130 0 0 {name=p22 sig_type=std_logic lab=agnd}

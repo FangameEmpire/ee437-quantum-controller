@@ -18,12 +18,12 @@ subdivx=8
  unity=1
 dataset=-1
 color="4 5 6 7 8 9"
-node="gain_00
-gain_01
-gain_02
-gain_03
-gain_04
-gain_05"
+node="\\"re(gain_00); gain_00 ph(gain_00) re()\\"
+\\"re(gain_01); gain_01 ph(gain_01) re()\\"
+\\"re(gain_02); gain_02 ph(gain_02) re()\\"
+\\"re(gain_03); gain_03 ph(gain_03) re()\\"
+\\"re(gain_04); gain_04 ph(gain_04) re()\\"
+\\"re(gain_05); gain_05 ph(gain_05) re()\\""
 sweep=frequency
 
 
@@ -38,8 +38,8 @@ x1=0
 
 
 rainbow=0
-y2=100
-y1=-20
+y2=20
+y1=-100
 x2=11}
 B 2 -920 -720 -490 -400 {flags=graph
 
@@ -95,7 +95,7 @@ lab=agnd}
 N -220 -100 -80 -100 {
 lab=out_01}
 N -220 -380 -220 -360 {
-lab=stim}
+lab=#net1}
 N -220 -240 -220 -220 {
 lab=agnd}
 N -220 -300 -80 -300 {
@@ -192,7 +192,6 @@ m=1
 value=7.904e-14
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} -220 -380 0 0 {name=p8 sig_type=std_logic lab=stim}
 C {devices/lab_wire.sym} -220 -220 0 0 {name=p9 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -80 -300 0 0 {name=p11 sig_type=std_logic lab=out_00}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 20 -70 0 0 {name=C3 model=cap_mim_m3_1 W=20 L=20.5 MF=1 spiceprefix=X}
@@ -245,3 +244,4 @@ C {devices/lab_wire.sym} 260 -380 0 0 {name=p22 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} 240 -130 0 0 {name=p24 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -240 -130 0 0 {name=p25 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} 0 -130 0 0 {name=p26 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -220 -380 0 0 {name=p8 sig_type=std_logic lab=stim}
