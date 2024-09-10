@@ -4,11 +4,11 @@ Warning: netgen command 'global' use fully-qualified name '::netgen::global'
 Reading netlist file /foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.ext.spc
 Call to undefined subcircuit sky130_fd_pr__pfet_01v8_lvt
 Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8_lvt
+Creating placeholder cell definition.
 Call to undefined subcircuit sky130_fd_pr__nfet_01v8
 Creating placeholder cell definition.
 Call to undefined subcircuit sky130_fd_pr__pfet_01v8
-Creating placeholder cell definition.
-Call to undefined subcircuit sky130_fd_pr__nfet_01v8_lvt
 Creating placeholder cell definition.
 Reading netlist file /foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.sch.spc
 Call to undefined subcircuit sky130_fd_pr__nfet_01v8
@@ -125,16 +125,16 @@ No property topography found for device sky130_fd_pr__pfet_01v8_lvt
 Comparison output logged to file /foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.lvs.out
 Logging to file "/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.lvs.out" enabled
 Circuit sky130_fd_pr__pfet_01v8_lvt contains no devices.
+Circuit sky130_fd_pr__nfet_01v8_lvt contains no devices.
 Circuit sky130_fd_pr__nfet_01v8 contains no devices.
 Circuit sky130_fd_pr__pfet_01v8 contains no devices.
-Circuit sky130_fd_pr__nfet_01v8_lvt contains no devices.
 
 Contents of circuit 1:  Circuit: 'Hard_Cascode'
-Circuit Hard_Cascode contains 168 device instances.
-  Class: sky130_fd_pr__nfet_01v8 instances:  16
-  Class: sky130_fd_pr__nfet_01v8_lvt instances:  32
-  Class: sky130_fd_pr__pfet_01v8 instances:  40
-  Class: sky130_fd_pr__pfet_01v8_lvt instances:  80
+Circuit Hard_Cascode contains 80 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:  20
+  Class: sky130_fd_pr__nfet_01v8_lvt instances:  20
+  Class: sky130_fd_pr__pfet_01v8 instances:  20
+  Class: sky130_fd_pr__pfet_01v8_lvt instances:  20
 Circuit contains 13 nets.
 Contents of circuit 2:  Circuit: 'Hard_Cascode'
 Circuit Hard_Cascode contains 8 device instances.
@@ -168,6 +168,10 @@ Circuit 1 contains 13 nets,    Circuit 2 contains 13 nets.
 
 Final result: 
 Circuits match uniquely.
-.
+Property errors were found.
+
+The following cells had property errors:
+ Hard_Cascode
+
 Logging to file "/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.lvs.out" disabled
 LVS Done.
