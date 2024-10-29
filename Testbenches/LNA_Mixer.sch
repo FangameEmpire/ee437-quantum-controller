@@ -69,12 +69,9 @@ N 320 -40 320 -20 {
 lab=agnd}
 N 320 -70 320 -40 {
 lab=agnd}
-C {/foss/designs/EE437/LNA/LNA.sym} -20 -150 0 0 {name=x1}
-C {/foss/designs/EE437/LNA/Mixer.sym} 560 -60 0 0 {name=x3}
 C {devices/lab_pin.sym} 690 -220 0 0 {name=p15 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 690 -60 0 0 {name=p16 sig_type=std_logic lab=agnd}
 C {devices/lab_pin.sym} 580 -120 0 0 {name=p23 sig_type=std_logic lab=ibias_n_50u}
-C {/foss/designs/EE437/LNA/Mixer.sym} 560 -260 0 0 {name=x2}
 C {devices/lab_pin.sym} 690 -420 0 0 {name=p26 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 690 -260 0 0 {name=p28 sig_type=std_logic lab=agnd}
 C {devices/lab_pin.sym} 580 -320 0 0 {name=p31 sig_type=std_logic lab=ibias_n_50u}
@@ -108,3 +105,6 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} 320 -20 0 0 {name=p36 sig_type=std_logic lab=agnd}
 C {devices/lab_pin.sym} 260 -340 0 1 {name=p2 sig_type=std_logic lab=ibias_n_50u}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/LNA/LNA.sym} -20 -150 0 0 {name=x1}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/Mixer/Mixer.sym} 560 -260 0 0 {name=x2}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/Mixer/Mixer.sym} 560 -60 0 0 {name=x3}
