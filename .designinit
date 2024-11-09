@@ -1,0 +1,7 @@
+PDK_ROOT=/foss/pdks
+PDKPATH=/foss/pdks/sky130A
+
+export PDK=sky130A
+export STD_CELL_LIBRARY=sky130_fd_sc_hd
+export KLAYOUT_HOME=/foss/designs/.klayout
+
