@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>SKY130 DRC runset</description>
- <original-file/>
+ <original-file>/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.gds</original-file>
  <generator>drc: script='/foss/designs/.klayout/drc/sky130A.lydrc'</generator>
  <top-cell>Hard_Cascode</top-cell>
  <tags>
@@ -291,12 +291,6 @@
   </category>
   <category>
    <name>via3.1a</name>
-   <description>via3.1a : minimum/maximum width of via3 : 0.2um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>via3.1a</name>
    <description>via3.1a : minimum/maximum width of via3 in areaid.mt: 0.2um or 0.8um</description>
    <categories>
    </categories>
@@ -417,115 +411,7 @@
   </category>
   <category>
    <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of diff : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of tap : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of poly : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of li : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of m1 : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of m2 : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of m3 : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of m4 : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
-   <description>nsm.4 : min. nsm enclosure of m5 : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.4</name>
    <description>nsm.4 : min. nsm enclosure of cfom : 3.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to diff : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to tap : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to poly : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to li : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to m1 : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to m2 : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to m3 : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to m4 : 1.0um</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>nsm.3</name>
-   <description>nsm.3 : min. nsm spacing to m5 : 1.0um</description>
    <categories>
    </categories>
   </category>
@@ -651,19 +537,7 @@
   </category>
   <category>
    <name>diff_angle</name>
-   <description>x.2 : non 90 degree angle diff</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>diff_angle</name>
    <description>x.2c : non 45 degree angle diff</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>tap_angle</name>
-   <description>x.2 : non 90 degree angle tap</description>
    <categories>
    </categories>
   </category>
@@ -1008,6 +882,7 @@
   <cell>
    <name>Hard_Cascode</name>
    <variant/>
+   <layout-name/>
    <references>
    </references>
   </cell>

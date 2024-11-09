@@ -1,4 +1,4 @@
-Netgen 1.5.255 compiled on Wed Mar 27 07:51:44 PM CET 2024
+Netgen 1.5.286 compiled on Thu Oct 31 02:36:06 PM CET 2024
 Warning: netgen command 'format' use fully-qualified name '::netgen::format'
 Warning: netgen command 'global' use fully-qualified name '::netgen::global'
 Reading netlist file /foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.ext.spc
@@ -142,7 +142,7 @@ Circuit Hard_Cascode contains 8 device instances.
   Class: sky130_fd_pr__nfet_01v8_lvt instances:   2
   Class: sky130_fd_pr__pfet_01v8 instances:   2
   Class: sky130_fd_pr__pfet_01v8_lvt instances:   2
-Circuit contains 13 nets.
+Circuit contains 13 nets, and 1 disconnected pin.
 
 Circuit was modified by parallel/series device merging.
 New circuit summary:
@@ -160,18 +160,14 @@ Circuit Hard_Cascode contains 8 device instances.
   Class: sky130_fd_pr__nfet_01v8_lvt instances:   2
   Class: sky130_fd_pr__pfet_01v8 instances:   2
   Class: sky130_fd_pr__pfet_01v8_lvt instances:   2
-Circuit contains 13 nets.
+Circuit contains 13 nets, and 1 disconnected pin.
 
 Circuit 1 contains 8 devices, Circuit 2 contains 8 devices.
 Circuit 1 contains 13 nets,    Circuit 2 contains 13 nets.
 
 
 Final result: 
-Circuits match uniquely.
-Property errors were found.
-
-The following cells had property errors:
- Hard_Cascode
+Top level cell failed pin matching.
 
 Logging to file "/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode.lvs.out" disabled
 LVS Done.

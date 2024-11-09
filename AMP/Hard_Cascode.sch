@@ -1,4 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
+v {xschem version=3.4.6RC file_version=1.2
 }
 G {}
 K {}
@@ -80,9 +80,9 @@ C {devices/lab_wire.sym} 80 -370 0 0 {name=p42 sig_type=std_logic lab=avdd
 }
 C {sky130_fd_pr/nfet_01v8.sym} 140 -90 0 0 {name=M1
 L=0.15
-W=1.00
-nf=1
-mult=8
+W=8.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -94,9 +94,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 380 -90 0 1 {name=M2
 L=0.15
-W=1.00
-nf=1
-mult=8
+W=8.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -108,9 +108,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 180 -510 0 1 {name=M7
 L=0.15
-W=1.00
-nf=1
-mult=20
+W=20.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -122,9 +122,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 340 -510 0 0 {name=M8
 L=0.15
-W=1.00
-nf=1
-mult=20
+W=20.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -136,9 +136,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 180 -230 0 1 {name=M3
 L=0.15
-W=1.00
-nf=1
-mult=16
+W=16.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -150,9 +150,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 340 -230 0 0 {name=M4
 L=0.15
-W=1.00
-nf=1
-mult=16
+W=16.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -164,9 +164,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 180 -370 0 1 {name=M5
 L=0.35
-W=1.00
-nf=1
-mult=40
+W=40.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -178,9 +178,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 340 -370 0 0 {name=M6
 L=0.35
-W=1.00
-nf=1
-mult=40
+W=40.00
+nf=10
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
