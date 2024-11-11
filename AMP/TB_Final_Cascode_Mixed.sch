@@ -1,4 +1,4 @@
-v {xschem version=3.4.6RC file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -17,10 +17,11 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6"
+color="4 5 6 7"
 node="\\"re(gain_sch); gain_sch ph(gain_sch) re()\\"
 \\"re(gain_mod); gain_mod ph(gain_mod) re()\\"
-\\"re(gain_gds); gain_gds ph(gain_gds) re()\\""
+\\"re(gain_gds); gain_gds ph(gain_gds) re()\\"
+\\"re(gain_simp); gain_gds ph(gain_simp) re()\\""
 sweep=frequency
 
 
@@ -45,10 +46,11 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6"
+color="4 5 6 7"
 node="ratio_sch
 ratio_mod
-ratio_gds"
+ratio_gds
+ratio_simp"
 sweep=frequency
 
 
@@ -58,10 +60,10 @@ logy=1
 
 
 unitx=1
-y1=-3
+y1=-2
 x1=0
 x2=11
-y2=3}
+y2=4}
 B 2 -1430 360 -1000 680 {flags=graph
 
 
@@ -74,10 +76,11 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6"
+color="4 5 6 7"
 node="\\"re(gain_sch); gain_sch ph(gain_sch) re()\\"
 \\"re(gain_mod); gain_mod ph(gain_mod) re()\\"
-\\"re(gain_gds); gain_gds ph(gain_gds) re()\\""
+\\"re(gain_gds); gain_gds ph(gain_gds) re()\\"
+\\"re(gain_simp); gain_gds ph(gain_simp) re()\\""
 sweep=frequency
 
 
@@ -102,10 +105,11 @@ subdivx=8
 
  unity=1
 dataset=-1
-color="4 5 6"
+color="4 5 6 7"
 node="ratio_sch
 ratio_mod
-ratio_gds"
+ratio_gds
+ratio_simp"
 sweep=frequency
 
 
@@ -178,6 +182,18 @@ lab=avdd}
 N -740 -100 -740 -80 {
 lab=avdd_gated}
 N -740 -160 -740 -130 {
+lab=avdd}
+N -140 940 -140 960 {
+lab=agnd}
+N -220 860 -140 860 {
+lab=vout_simp}
+N -140 860 -140 880 {
+lab=vout_simp}
+N -360 760 -360 780 {
+lab=#net6}
+N -360 760 -320 760 {
+lab=#net6}
+N -260 760 -220 760 {
 lab=avdd}
 C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
 only_toplevel=true
@@ -423,6 +439,10 @@ let vout_gds = v(vout_gds)
 let gain_gds = db(mag(vout_gds/vin_diff))
 let ratio_gds = (vout_gds/vin_diff)
 
+let vout_simp = v(vout_simp)
+let gain_simp = db(mag(vout_simp/vin_diff))
+let ratio_simp = (vout_simp/vin_diff)
+
 write TB_Final_Cascode_Mixed.raw
 set appendwrite
 
@@ -460,9 +480,8 @@ C {devices/lab_wire.sym} -460 360 0 0 {name=p6 sig_type=std_logic lab=vinn}
 C {devices/lab_wire.sym} -460 400 0 0 {name=p16 sig_type=std_logic lab=vinp}
 C {devices/lab_wire.sym} -460 600 0 0 {name=p17 sig_type=std_logic lab=vinn}
 C {devices/lab_wire.sym} -460 640 0 0 {name=p18 sig_type=std_logic lab=vinp}
-C {devices/lab_wire.sym} -400 280 0 0 {name=p19 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 280 0 0 {name=p19 sig_type=std_logic lab=avdd_gated}
 C {devices/lab_wire.sym} -400 480 0 1 {name=p21 sig_type=std_logic lab=agnd}
-C {devices/lab_wire.sym} -400 520 0 0 {name=p23 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} -400 720 0 1 {name=p24 sig_type=std_logic lab=agnd}
 C {devices/lab_wire.sym} -140 380 0 0 {name=p26 sig_type=std_logic lab=vout_mod}
 C {devices/lab_wire.sym} -140 480 0 0 {name=p27 sig_type=std_logic lab=agnd}
@@ -480,8 +499,8 @@ C {devices/lab_wire.sym} -740 -180 0 0 {name=p25 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} -740 -80 0 0 {name=p30 sig_type=std_logic lab=avdd_gated}
 C {sky130_fd_pr/pfet_01v8.sym} -760 -130 0 0 {name=M1
 L=0.15
-W=100
-nf=50
+W=120
+nf=60
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -493,3 +512,14 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_wire.sym} -780 -130 0 0 {name=p22 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -400 520 0 0 {name=p23 sig_type=std_logic lab=avdd_gated}
+C {devices/lab_wire.sym} -460 840 0 0 {name=p31 sig_type=std_logic lab=vinn}
+C {devices/lab_wire.sym} -460 880 0 0 {name=p32 sig_type=std_logic lab=vinp}
+C {devices/lab_wire.sym} -400 960 0 1 {name=p33 sig_type=std_logic lab=agnd}
+C {devices/lab_wire.sym} -140 860 0 0 {name=p34 sig_type=std_logic lab=vout_simp}
+C {devices/lab_wire.sym} -140 960 0 0 {name=p35 sig_type=std_logic lab=agnd}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -140 910 0 0 {name=C4 model=cap_mim_m3_1 W=11 L=9.05 MF=1 spiceprefix=X}
+C {devices/isource.sym} -290 760 1 0 {name=Isrc_gds1 value=50u}
+C {devices/lab_wire.sym} -220 760 0 1 {name=p36 sig_type=std_logic lab=avdd}
+C {devices/lab_wire.sym} -400 760 0 0 {name=p37 sig_type=std_logic lab=avdd}
+C {/foss/designs/EE437/Project/ee437-quantum-controller/AMP/Final_Cascode_Simplfied.sym} -320 860 0 0 {name=x4}
