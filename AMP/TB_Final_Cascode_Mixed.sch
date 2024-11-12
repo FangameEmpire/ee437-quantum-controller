@@ -195,7 +195,7 @@ N -360 760 -320 760 {
 lab=#net6}
 N -260 760 -220 760 {
 lab=avdd}
-C {devices/code_shown.sym} 30 -30 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 20 -30 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 .include /foss/designs/EE437/Project/ee437-quantum-controller/AMP/Hard_Cascode_cc.pex.spice
